@@ -7,10 +7,10 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/kyawzinthant/works/schoolManagement/node_modules/bootstrap/dist/css/bootstrap.min.css */"q4sD");
-__webpack_require__(/*! /Users/kyawzinthant/works/schoolManagement/src/styles.css */"OmL/");
-__webpack_require__(/*! /Users/kyawzinthant/works/schoolManagement/src/assets/css/main.min.css */"jDJE");
-module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/schoolManagement/node_modules/croppie/croppie.css */"3uFf");
+__webpack_require__(/*! /Users/kyawzinthant/works/testtet/schoolManagement/node_modules/bootstrap/dist/css/bootstrap.min.css */"q4sD");
+__webpack_require__(/*! /Users/kyawzinthant/works/testtet/schoolManagement/src/styles.css */"OmL/");
+__webpack_require__(/*! /Users/kyawzinthant/works/testtet/schoolManagement/src/assets/css/main.min.css */"jDJE");
+module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/testtet/schoolManagement/node_modules/croppie/croppie.css */"3uFf");
 
 
 /***/ }),

@@ -236,7 +236,7 @@ var Days;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/schoolManagement/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/testtet/schoolManagement/src/main.ts */"zUnb");
 
 
 /***/ }),
@@ -393,6 +393,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     // apiUrl :'http://localhost:4000',
+    // apiUrl:'https://quiet-shelf-92207.herokuapp.com/api/v1',
     apiUrl: 'http://ec2-52-221-194-25.ap-southeast-1.compute.amazonaws.com:5000/api/v1',
     enableDebug: false
 };
@@ -1207,6 +1208,50 @@ class HomeService {
         let url = this.baseUrl + "/users/parents/home";
         return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
     }
+    getAssessmentDetail(id) {
+        let url = this.baseUrl + "/assements/" + id;
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
+    }
+    getAssessmenttype() {
+        let url = this.baseUrl + "/assement-types";
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
+    }
+    getAssessmentscore(id) {
+        let url = this.baseUrl + "/assement-scores/" + id;
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
+    }
+    createAssessment(assessment) {
+        let url = this.baseUrl + "/assements";
+        return this.http.post(url, assessment).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
+    }
+    updateAssessment(assessment) {
+        let url = this.baseUrl + "/assements/" + assessment.assessmentId;
+        return this.http.put(url, assessment).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
+    }
+    onCreateScore(assessmentScore) {
+        let url = this.baseUrl + "/assement-scores";
+        var formData = new FormData();
+        // formData.append("title", assessmentScore.title);
+        formData.append("classId", assessmentScore.classId);
+        formData.append("assement", assessmentScore.assementId);
+        formData.append("concept", assessmentScore.concept);
+        formData.append("maxScore", assessmentScore.maxScore);
+        formData.append("assementType", assessmentScore.assementType);
+        formData.append("file", assessmentScore.file);
+        return this.http.post(url, formData);
+    }
+    onUpdateScore(assessmentScore) {
+        let url = this.baseUrl + "/assement-scores/" + assessmentScore.id;
+        var formData = new FormData();
+        // formData.append("title", assessmentScore.title);
+        formData.append("classId", assessmentScore.classId);
+        formData.append("assement", assessmentScore.assementId);
+        formData.append("concept", assessmentScore.concept);
+        formData.append("maxScore", assessmentScore.maxScore);
+        formData.append("assementType", assessmentScore.assementType);
+        formData.append("file", assessmentScore.file);
+        return this.http.put(url, formData);
+    }
 }
 HomeService.ɵfac = function HomeService_Factory(t) { return new (t || HomeService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
 HomeService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: HomeService, factory: HomeService.ɵfac, providedIn: 'root' });
@@ -2000,4 +2045,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.8f1c1acc7997656d9925.js.map
+//# sourceMappingURL=main.ce9c6b5655d17225ad50.js.map
