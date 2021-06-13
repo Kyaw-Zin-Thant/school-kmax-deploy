@@ -236,7 +236,7 @@ var Days;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/testtet/schoolManagement/src/main.ts */"zUnb");
+module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/schoolManagement/src/main.ts */"zUnb");
 
 
 /***/ }),
@@ -1310,6 +1310,10 @@ class ClassService {
         };
         return this.http.post(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
     }
+    onAttandance(obj, userId, classId) {
+        let url = this.baseUrl + "/classes/" + classId + "/" + userId + "/attendance";
+        return this.http.post(url, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
+    }
     createReply(classId, homeworkId, reply) {
         let url = this.baseUrl + "/classes/" + classId + "/homework/" + homeworkId + "/reply";
         let data = {
@@ -2045,4 +2049,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.ce9c6b5655d17225ad50.js.map
+//# sourceMappingURL=main.01833967f25298f65c5a.js.map

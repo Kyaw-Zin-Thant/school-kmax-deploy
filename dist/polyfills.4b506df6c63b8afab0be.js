@@ -7,7 +7,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/testtet/schoolManagement/src/polyfills.ts */"hN/g");
+module.exports = __webpack_require__(/*! /Users/kyawzinthant/works/schoolManagement/src/polyfills.ts */"hN/g");
 
 
 /***/ }),
