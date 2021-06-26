@@ -185,7 +185,7 @@ class LessonPlanListsComponent {
         this.getLessonList();
     }
     getLessonList() {
-        this._service.getLessonList(this.searchData, this.page, this.limit, this.filter.sortColumn, this.filter.sortDirection)
+        this.subscription = this._service.getLessonList(this.searchData, this.page, this.limit, this.filter.sortColumn, this.filter.sortDirection)
             .subscribe((res) => {
             this.dataLists.data = res.lessonPlans;
             this.totalCount = res.totalCount;
@@ -194,6 +194,9 @@ class LessonPlanListsComponent {
             this.dataLists.objectLabel = this.objectLabel;
             this.dataLists.btnLink = this.actionLinks;
         });
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 }
 LessonPlanListsComponent.ɵfac = function LessonPlanListsComponent_Factory(t) { return new (t || LessonPlanListsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_2__["LessonplanService"])); };
@@ -313,7 +316,7 @@ class LessonPlanCreateComponent {
         });
     }
     getLessonPlanDetail() {
-        this._ser.getLessonPlanDetail(this.lessonPlanId)
+        this.subscription = this._ser.getLessonPlanDetail(this.lessonPlanId)
             .subscribe((res) => {
             let temp = res.lessonPlan;
             this.lessonplanForm = this.formBuilder.group({
@@ -336,7 +339,7 @@ class LessonPlanCreateComponent {
         let lessonPlan = new _model_lessonPlan__WEBPACK_IMPORTED_MODULE_3__["LessonPlan"]();
         lessonPlan.name = this.lessonplanForm.value.name;
         lessonPlan.lesssonPlan = this.file;
-        this._ser.onCreateLessonPlan(lessonPlan)
+        this.subscription = this._ser.onCreateLessonPlan(lessonPlan)
             .subscribe((res) => {
             console.log(res);
             this.submitted = false;
@@ -347,7 +350,7 @@ class LessonPlanCreateComponent {
         lessonPlan.name = this.lessonplanForm.value.name;
         lessonPlan.lesssonPlan = this.file;
         lessonPlan._id = this.lessonPlanId;
-        this._ser.onUpdateLessonPlan(lessonPlan)
+        this.subscription = this._ser.onUpdateLessonPlan(lessonPlan)
             .subscribe((res) => {
             console.log(res);
             this.submitted = false;
@@ -361,6 +364,9 @@ class LessonPlanCreateComponent {
     cancelLessonPlan() {
         let role = this._auth.currentUserValue.role.toLocaleLowerCase();
         this._router.navigateByUrl(role + "/" + _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["EssentialRoute"].LessonList);
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 }
 LessonPlanCreateComponent.ɵfac = function LessonPlanCreateComponent_Factory(t) { return new (t || LessonPlanCreateComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_lessonplan_service__WEBPACK_IMPORTED_MODULE_4__["LessonplanService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_6__["AuthenticationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"])); };
@@ -433,4 +439,4 @@ LessonPlanCreateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵ
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-lessonplan-lessonplan-module.b8415d701a5a54d7d487.js.map
+//# sourceMappingURL=modules-lessonplan-lessonplan-module.58a2a42423d1c827878b.js.map

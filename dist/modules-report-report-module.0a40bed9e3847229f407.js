@@ -125,7 +125,7 @@ class ReportCreateComponent {
         report.report = this.file;
         report.studentId = this.studentId;
         console.log(report);
-        this._ser.onCreateReport(report)
+        this.subscription = this._ser.onCreateReport(report)
             .subscribe(() => {
             this.submitted = false;
             this.goBack();
@@ -138,14 +138,14 @@ class ReportCreateComponent {
         report.studentId = this.studentId;
         report._id = this.reportId;
         console.log(report);
-        this._ser.onEditReport(report)
+        this.subscription = this._ser.onEditReport(report)
             .subscribe(() => {
             this.submitted = false;
             this.goBack();
         });
     }
     getReportDetail() {
-        this._ser.getReportDetail(this.reportId)
+        this.subscription = this._ser.getReportDetail(this.reportId)
             .subscribe((report) => {
             console.log(report);
             let tempReport = report.report;
@@ -324,7 +324,7 @@ class ReportForStudentsComponent {
     }
     getReportStudents() {
         this.isLoading = true;
-        this._reportSerivce.getReportStudents(this.searchData, this.page, this.limit, this.filter.sortDirection, this.filter.sortColumn, this.studentId)
+        this.subscription = this._reportSerivce.getReportStudents(this.searchData, this.page, this.limit, this.filter.sortDirection, this.filter.sortColumn, this.studentId)
             .subscribe((res) => {
             console.log(res);
             let temp = {};
@@ -341,6 +341,8 @@ class ReportForStudentsComponent {
         });
     }
     onFilter(data) {
+        this.filter = data;
+        this.getReportStudents();
     }
     search(search) {
         this.searchData = search;
@@ -378,42 +380,6 @@ ReportForStudentsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["�
                 styleUrls: ['./report-for-students.component.css']
             }]
     }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }, { type: _core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticationService"] }, { type: _core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_4__["ReportService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }]; }, null); })();
-
-
-/***/ }),
-
-/***/ "Ea21":
-/*!*********************************************************************!*\
-  !*** ./src/app/modules/report/report-main/report-main.component.ts ***!
-  \*********************************************************************/
-/*! exports provided: ReportMainComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReportMainComponent", function() { return ReportMainComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-
-
-class ReportMainComponent {
-    constructor() { }
-    ngOnInit() {
-    }
-}
-ReportMainComponent.ɵfac = function ReportMainComponent_Factory(t) { return new (t || ReportMainComponent)(); };
-ReportMainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: ReportMainComponent, selectors: [["app-report-main"]], decls: 2, vars: 0, template: function ReportMainComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "report-main works!");
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    } }, styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcmVwb3J0L3JlcG9ydC1tYWluL3JlcG9ydC1tYWluLmNvbXBvbmVudC5jc3MifQ== */"] });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ReportMainComponent, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
-        args: [{
-                selector: 'app-report-main',
-                templateUrl: './report-main.component.html',
-                styleUrls: ['./report-main.component.css']
-            }]
-    }], function () { return []; }, null); })();
 
 
 /***/ }),
@@ -585,7 +551,7 @@ class ReportTeacherComponent {
         this.getReportList();
     }
     getReportList() {
-        this._service.getUsersClasses(this.page, this.limit, this.direction, this.searchData)
+        this.subscription = this._service.getUsersClasses(this.page, this.limit, this.direction, this.searchData)
             .subscribe((res) => {
             if (this.direction) {
                 this.isclassEmpty = res.classes.length == 0;
@@ -620,6 +586,9 @@ class ReportTeacherComponent {
     }
     goToStudents(id) {
         this._router.navigateByUrl("teacher/" + _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["EssentialRoute"].StudentByReport + "/" + id);
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 }
 ReportTeacherComponent.ɵfac = function ReportTeacherComponent_Factory(t) { return new (t || ReportTeacherComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_2__["ReportService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"])); };
@@ -674,20 +643,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "ofXK");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "3Pt+");
-/* harmony import */ var _report_main_report_main_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./report-main/report-main.component */ "Ea21");
-/* harmony import */ var _user_view_user_view_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./user-view/user-view.component */ "aHE/");
-/* harmony import */ var _app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @app/modules/report/report-teacher/report-teacher.component */ "nRcI");
-/* harmony import */ var _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./report-for-students/report-for-students.component */ "64rK");
-/* harmony import */ var _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./report-create/report-create.component */ "2xrB");
-/* harmony import */ var _enum_app_enum__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @enum/app_enum */ "+Mrb");
-/* harmony import */ var _core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @core/guards/auth-guard.service */ "kx0m");
-/* harmony import */ var _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @basic-components/basic-components.module */ "mHbn");
+/* harmony import */ var _user_view_user_view_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user-view/user-view.component */ "aHE/");
+/* harmony import */ var _app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @app/modules/report/report-teacher/report-teacher.component */ "nRcI");
+/* harmony import */ var _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./report-for-students/report-for-students.component */ "64rK");
+/* harmony import */ var _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./report-create/report-create.component */ "2xrB");
+/* harmony import */ var _enum_app_enum__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @enum/app_enum */ "+Mrb");
+/* harmony import */ var _core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @core/guards/auth-guard.service */ "kx0m");
+/* harmony import */ var _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @basic-components/basic-components.module */ "mHbn");
 
 
 
 
 // com lists
-
 
 
 
@@ -701,29 +668,29 @@ __webpack_require__.r(__webpack_exports__);
 const routes = [
     {
         path: 'management',
-        component: _app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_6__["ReportTeacherComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__["AuthGuardService"]],
+        component: _app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_5__["ReportTeacherComponent"],
+        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_9__["AuthGuardService"]],
         data: {
-            roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].Admin, _enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].Teacher, _enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].StudentAffair],
+            roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].Admin, _enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].Teacher, _enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].StudentAffair],
         }
     },
     {
         path: 'students/:id',
-        component: _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_7__["ReportForStudentsComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__["AuthGuardService"]],
-        data: { roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].Admin, _enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].Teacher, _enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].StudentAffair] }
+        component: _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_6__["ReportForStudentsComponent"],
+        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_9__["AuthGuardService"]],
+        data: { roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].Admin, _enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].Teacher, _enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].StudentAffair] }
     },
     {
         path: 'students/create/:studentId',
-        component: _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_8__["ReportCreateComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__["AuthGuardService"]],
-        data: { roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].Teacher] }
+        component: _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_7__["ReportCreateComponent"],
+        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_9__["AuthGuardService"]],
+        data: { roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].Teacher] }
     },
     {
         path: 'students/edit/:studentId/:reportId',
-        component: _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_8__["ReportCreateComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_10__["AuthGuardService"]],
-        data: { roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_9__["Role"].Teacher] }
+        component: _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_7__["ReportCreateComponent"],
+        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_9__["AuthGuardService"]],
+        data: { roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_8__["Role"].Teacher] }
     },
 ];
 class ReportModule {
@@ -731,42 +698,38 @@ class ReportModule {
 ReportModule.ɵmod = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineNgModule"]({ type: ReportModule });
 ReportModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjector"]({ factory: function ReportModule_Factory(t) { return new (t || ReportModule)(); }, imports: [[
             _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-            _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_11__["BasicComponentsModule"],
+            _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_10__["BasicComponentsModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes),
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
             // PipeModule
         ]] });
-(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](ReportModule, { declarations: [_report_main_report_main_component__WEBPACK_IMPORTED_MODULE_4__["ReportMainComponent"],
-        _app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_6__["ReportTeacherComponent"],
-        _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_7__["ReportForStudentsComponent"],
-        _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_8__["ReportCreateComponent"],
-        _user_view_user_view_component__WEBPACK_IMPORTED_MODULE_5__["UserViewComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-        _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_11__["BasicComponentsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
+(function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsetNgModuleScope"](ReportModule, { declarations: [_app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_5__["ReportTeacherComponent"],
+        _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_6__["ReportForStudentsComponent"],
+        _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_7__["ReportCreateComponent"],
+        _user_view_user_view_component__WEBPACK_IMPORTED_MODULE_4__["UserViewComponent"]], imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+        _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_10__["BasicComponentsModule"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
         _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
         // PipeModule
-    ], exports: [_report_main_report_main_component__WEBPACK_IMPORTED_MODULE_4__["ReportMainComponent"]] }); })();
+    ] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ReportModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
                 declarations: [
-                    _report_main_report_main_component__WEBPACK_IMPORTED_MODULE_4__["ReportMainComponent"],
-                    _app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_6__["ReportTeacherComponent"],
-                    _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_7__["ReportForStudentsComponent"],
-                    _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_8__["ReportCreateComponent"],
-                    _user_view_user_view_component__WEBPACK_IMPORTED_MODULE_5__["UserViewComponent"]
+                    _app_modules_report_report_teacher_report_teacher_component__WEBPACK_IMPORTED_MODULE_5__["ReportTeacherComponent"],
+                    _report_for_students_report_for_students_component__WEBPACK_IMPORTED_MODULE_6__["ReportForStudentsComponent"],
+                    _report_create_report_create_component__WEBPACK_IMPORTED_MODULE_7__["ReportCreateComponent"],
+                    _user_view_user_view_component__WEBPACK_IMPORTED_MODULE_4__["UserViewComponent"]
                 ],
                 imports: [
                     _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                    _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_11__["BasicComponentsModule"],
+                    _basic_components_basic_components_module__WEBPACK_IMPORTED_MODULE_10__["BasicComponentsModule"],
                     _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes),
                     _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"],
                     _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"]
                     // PipeModule
                 ],
-                exports: [
-                    _report_main_report_main_component__WEBPACK_IMPORTED_MODULE_4__["ReportMainComponent"]
-                ]
+                exports: []
             }]
     }], null, null); })();
 
@@ -774,4 +737,4 @@ ReportModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjec
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-report-report-module.7e9f11eba730789aa9d4.js.map
+//# sourceMappingURL=modules-report-report-module.0a40bed9e3847229f407.js.map

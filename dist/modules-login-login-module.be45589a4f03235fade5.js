@@ -78,7 +78,7 @@ class LoginComponent {
             return;
         }
         else {
-            this.authService.login(this.f.email.value, this.f.password.value)
+            this.loadingSubscription = this.authService.login(this.f.email.value, this.f.password.value)
                 .subscribe(data => {
                 // this._router.navigateByUrl(`${data.user.role.toLowerCase()}/home/${data.user.role.toLowerCase()}-home`);
                 if (data.user.role == _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Student)
@@ -87,7 +87,8 @@ class LoginComponent {
                     this._router.navigateByUrl(`${data.user.role.toLowerCase()}/home/${data.user.role.toLowerCase()}-home`);
             }, error => {
                 console.log(error);
-                this.error = error.error.message;
+                if (error.error)
+                    this.error = error.error.message;
             });
         }
     }
@@ -99,6 +100,10 @@ class LoginComponent {
     }
     // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
+    ngOnDestroy() {
+        if (this.loadingSubscription)
+            this.loadingSubscription.unsubscribe();
+    }
 }
 LoginComponent.ɵfac = function LoginComponent_Factory(t) { return new (t || LoginComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_app_core_services_loader_service__WEBPACK_IMPORTED_MODULE_5__["LoaderService"])); };
 LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: LoginComponent, selectors: [["app-login"]], decls: 21, vars: 11, consts: [[1, "container"], [1, "text_p", "py-3"], [1, "d-flex", "justify-content-center", "flex-column"], [1, "text_p", "sign_text"], [1, "col-md-5", "mx-auto", 3, "formGroup", "ngSubmit"], ["class", "d-flex error-box", 4, "ngIf"], [1, "form-group"], ["type", "text", "formControlName", "email", "placeholder", "Enter your email or phone number", "appEmailphoneValidator", "", 1, "form-control", "input-style", 3, "ngClass"], ["type", "password", "formControlName", "password", "placeholder", "Enter your password", 1, "form-control", "input-style", 3, "ngClass"], [1, "text-center"], [1, "overlay"], ["class", "overlay__inner", 4, "ngIf"], [1, "d-flex", "error-box"], [1, "overlay__inner"], [1, "overlay__content"], [1, "spinner"]], template: function LoginComponent_Template(rf, ctx) { if (rf & 1) {
@@ -412,4 +417,4 @@ LoginModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInject
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-login-login-module.9c47f4e99d116c4a5066.js.map
+//# sourceMappingURL=modules-login-login-module.be45589a4f03235fade5.js.map

@@ -603,7 +603,7 @@ class UserCreateComponent {
         });
     }
     getUserDetail() {
-        this._userService.getUserDetail(this.userId)
+        this.subscription = this._userService.getUserDetail(this.userId)
             .subscribe((res) => {
             let user = res.user;
             this.currentRole = user.role;
@@ -696,7 +696,7 @@ class UserCreateComponent {
     onCreate() {
         let finalData = this.getFinalData();
         console.log(finalData);
-        this._userService.createUser(finalData)
+        this.subscription = this._userService.createUser(finalData)
             .subscribe(data => {
             this.goBack();
         }, error => {
@@ -708,8 +708,8 @@ class UserCreateComponent {
         let finalData = this.getFinalData();
         finalData._id = this.userId;
         console.log(finalData);
-        this._userService.updateUser(finalData)
-            .subscribe(data => {
+        this.subscription = this._userService.updateUser(finalData)
+            .subscribe(() => {
             this.goBack();
             //this.userForm.reset()
         }, error => {
@@ -851,6 +851,9 @@ class UserCreateComponent {
     }
     showForget() {
         this.isChangePassword = true;
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 }
 UserCreateComponent.ɵfac = function UserCreateComponent_Factory(t) { return new (t || UserCreateComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_5__["UserService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_7__["AuthenticationService"])); };
@@ -3474,7 +3477,7 @@ class UserListsComponent {
         });
     }
     getUserLists() {
-        this._userService.userLists(this.searchData, this.page, this.limit, this.filter.sortColumn, this.filter.sortDirection, this.selectedRouteRole)
+        this.subscription = this._userService.userLists(this.searchData, this.page, this.limit, this.filter.sortColumn, this.filter.sortDirection, this.selectedRouteRole)
             .subscribe(data => {
             let temp = {};
             temp.data = data.users;
@@ -3486,9 +3489,6 @@ class UserListsComponent {
             this.isLoading = false;
             this.searchData = null;
             this.totalCount = data.totalCount;
-        }, error => {
-            console.log(error);
-            // this.loading = false;
         });
     }
     search(val) {
@@ -3509,6 +3509,9 @@ class UserListsComponent {
         this.isLoading = true;
         this.filter = e;
         this.getUserLists();
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 }
 UserListsComponent.ɵfac = function UserListsComponent_Factory(t) { return new (t || UserListsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"])); };
@@ -3604,4 +3607,4 @@ StudentViewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-users-users-module.ad69eb6b9298bb0597d8.js.map
+//# sourceMappingURL=modules-users-users-module.f74684e3f73e0f242985.js.map

@@ -222,7 +222,7 @@ class YearMainComponent {
         this.getYearList();
     }
     getYearList() {
-        this._yser.getYearList().subscribe((res) => {
+        this.subscription = this._yser.getYearList().subscribe((res) => {
             this.yearLists = res.years;
             this.isLoading = false;
         });
@@ -243,7 +243,7 @@ class YearMainComponent {
     createYear() {
         console.log(this.yearName);
         this.isLoading = true;
-        this._yser.onCreateYear(this.yearName)
+        this.subscription = this._yser.onCreateYear(this.yearName)
             .subscribe(() => {
             this.getYearList();
             this.cancel();
@@ -267,17 +267,20 @@ class YearMainComponent {
     }
     onEditYear() {
         this.isEdit = false;
-        this._yser.onEditYear(this.yearName, this.selectedYear.yearId)
-            .subscribe((res) => {
+        this.subscription = this._yser.onEditYear(this.yearName, this.selectedYear.yearId)
+            .subscribe(() => {
             this.getYearList();
         });
     }
     onDeleteYear() {
         this.isDelete = false;
-        this._yser.onDeleteYear(this.selectedYear.yearId)
-            .subscribe((res) => {
+        this.subscription = this._yser.onDeleteYear(this.selectedYear.yearId)
+            .subscribe(() => {
             this.getYearList();
         });
+    }
+    ngOnDestroy() {
+        this.subscription.unsubscribe();
     }
 }
 YearMainComponent.ɵfac = function YearMainComponent_Factory(t) { return new (t || YearMainComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_2__["YearService"])); };
@@ -323,4 +326,4 @@ YearMainComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-year-year-module.c0aac2333b996342b239.js.map
+//# sourceMappingURL=modules-year-year-module.5366f57704dae9f298f7.js.map
