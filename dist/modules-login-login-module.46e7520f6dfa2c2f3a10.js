@@ -86,9 +86,8 @@ class LoginComponent {
                 else
                     this._router.navigateByUrl(`${data.user.role.toLowerCase()}/home/${data.user.role.toLowerCase()}-home`);
             }, error => {
-                console.log(error);
-                if (error.error)
-                    this.error = error.error.message;
+                if (error)
+                    this.error = error.message;
             });
         }
     }
@@ -417,4 +416,4 @@ LoginModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInject
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-login-login-module.be45589a4f03235fade5.js.map
+//# sourceMappingURL=modules-login-login-module.46e7520f6dfa2c2f3a10.js.map

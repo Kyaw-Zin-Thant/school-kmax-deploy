@@ -53,12 +53,8 @@ function AdminHomeComponent_div_2_Template(rf, ctx) { if (rf & 1) {
 } }
 function AdminHomeComponent_div_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-timetable", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-timetable");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-} if (rf & 2) {
-    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("timetableData", ctx_r1.timetableData);
 } }
 class AdminHomeComponent {
     constructor(_service) {
@@ -114,13 +110,13 @@ class AdminHomeComponent {
     }
 }
 AdminHomeComponent.ɵfac = function AdminHomeComponent_Factory(t) { return new (t || AdminHomeComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_2__["HomeService"])); };
-AdminHomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AdminHomeComponent, selectors: [["app-admin-home"]], decls: 4, vars: 3, consts: [[1, "mt-3", "main-wrapper"], [3, "tabLists", "tabChange"], [4, "ngIf"], [3, "tableData", "filter", "setfilter"], [3, "numberPerPage", "numberOfPages", "totalCount", "pageChange", 4, "ngIf"], [3, "numberPerPage", "numberOfPages", "totalCount", "pageChange"], [3, "timetableData"]], template: function AdminHomeComponent_Template(rf, ctx) { if (rf & 1) {
+AdminHomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: AdminHomeComponent, selectors: [["app-admin-home"]], decls: 4, vars: 3, consts: [[1, "mt-3", "main-wrapper"], [3, "tabLists", "tabChange"], [4, "ngIf"], [3, "tableData", "filter", "setfilter"], [3, "numberPerPage", "numberOfPages", "totalCount", "pageChange", 4, "ngIf"], [3, "numberPerPage", "numberOfPages", "totalCount", "pageChange"]], template: function AdminHomeComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "app-tabs", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("tabChange", function AdminHomeComponent_Template_app_tabs_tabChange_1_listener($event) { return ctx.tabChange($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, AdminHomeComponent_div_2_Template, 3, 3, "div", 2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AdminHomeComponent_div_3_Template, 2, 1, "div", 2);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, AdminHomeComponent_div_3_Template, 2, 0, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     } if (rf & 2) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
@@ -1328,4 +1324,4 @@ TeacherHomeComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-home-home-module.aa4319137362fefd7fbb.js.map
+//# sourceMappingURL=modules-home-home-module.2d7fe1c258e7afeaa018.js.map

@@ -558,8 +558,8 @@ class UserCreateComponent {
         this.validProfile = false;
         this.submitted = false;
         this.userRole = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Admin, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Parent, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Teacher, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].StudentAffair];
-        this.position = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Position"].Office_Staff, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Position"].Seniorteacher];
-        this.relationship = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Relationship"].Mother, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Relationship"].Father];
+        this.position = [];
+        this.relationship = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Relationship"].Mother, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Relationship"].Father, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Relationship"].Guardian];
         this.routeDirLists = {
             routeName: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminSideMenu"].User, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["CommonExpands"].Create],
             routeLink: ["users/admin-management/admin"]
@@ -592,8 +592,6 @@ class UserCreateComponent {
     checkAction() {
         this._activeRoute.params.subscribe(params => {
             this.userId = params.userId;
-            console.log(params.role, "<<>>", _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Student.toLowerCase());
-            console.log();
             this.routeRole = params.role;
             if (params.role == _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Student.toLowerCase())
                 this.isStudentCreate = true;
@@ -728,6 +726,12 @@ class UserCreateComponent {
     get f() { return this.userForm.controls; }
     changeRole() {
         this.currentRole = this.userForm.get('role').value;
+        if (this.currentRole == _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Admin)
+            this.position = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminPosition"].Principal, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminPosition"].VicePrincipal, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminPosition"].HOD, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminPosition"].Coordinator, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminPosition"].BOD, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminPosition"].Secretary];
+        else if (this.currentRole == _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Teacher)
+            this.position = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["TeacherPosition"].HomeroomTeacher, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["TeacherPosition"].AssitantTeacher, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["TeacherPosition"].SubjectTeacher];
+        else if (this.currentRole == _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].StudentAffair)
+            this.position = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StaffPosition"].Receptionist, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StaffPosition"].OfficeStaff, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StaffPosition"].Librarain, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StaffPosition"].Accountant,];
     }
     changePosition(e) {
         this.pos.setValue(e.target.value, {
@@ -1204,7 +1208,7 @@ function StudentCreateComponent_option_55_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
     const yr_r18 = ctx.$implicit;
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngValue", yr_r18.yearId);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngValue", yr_r18);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](yr_r18.name);
 } }
@@ -1237,7 +1241,7 @@ class StudentCreateComponent {
         this.submitted = false;
         this.yearList = [];
         this.years = [];
-        this.relationship = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StudentRelationship"].Son, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StudentRelationship"].Daughter];
+        this.relationship = [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StudentRelationship"].Son, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StudentRelationship"].Daughter, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StudentRelationship"].Niece, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StudentRelationship"].Nephew, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["StudentRelationship"].Grandchild,];
         this.routeDirLists = {
             routeName: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["AdminSideMenu"].User, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Parent, _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["CommonExpands"].Create],
             routeLink: []
@@ -1324,7 +1328,7 @@ class StudentCreateComponent {
             email: this.studentForm.value.email,
             dateOfBirth: this.studentForm.value.dateOfBirth,
             gender: this.studentForm.value.gender,
-            year: this.studentForm.value.year,
+            year: this.studentForm.value.year.yearId,
             relationship: this.studentForm.value.relationship,
             password: this.studentForm.value.password,
             role: _enum_app_enum__WEBPACK_IMPORTED_MODULE_2__["Role"].Student,
@@ -1450,13 +1454,6 @@ class StudentCreateComponent {
                 .then(function (e) { });
         };
         reader.readAsDataURL($event.target.files[0]);
-        // } else {
-        //   console.log('file size is too large');
-        //   // this.toastr.error('file size is too large');
-        //   this.validProfile = false;
-        //   this.imgDemoSlider = false;
-        //   $('.frame-upload').css('display', 'none');
-        // }
     }
     cropResult() {
         this.validProfile = true;
@@ -1512,7 +1509,7 @@ class StudentCreateComponent {
     }
 }
 StudentCreateComponent.ɵfac = function StudentCreateComponent_Factory(t) { return new (t || StudentCreateComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_5__["UserService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_5__["YearService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_serviceIndex__WEBPACK_IMPORTED_MODULE_5__["SupportService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_6__["Router"])); };
-StudentCreateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudentCreateComponent, selectors: [["app-student-create"]], outputs: { addStudent: "addStudent", displayStudentForm: "displayStudentForm" }, decls: 82, vars: 36, consts: [[1, "d-flex", "justify-content-between", "align-items-center", "mt-3"], [3, "dirList"], [1, "col-md-8", "mx-auto", 3, "formGroup"], [1, "container"], [1, "row"], [1, "col-md-6", "form-group"], [1, "row", "mb-3"], [1, "col-md-12"], ["type", "text", "formControlName", "username", "placeholder", "Enter your name", 1, "form-control", "input-style", 3, "ngClass"], ["type", "email", "formControlName", "email", "placeholder", "Enter your email", 1, "form-control", "input-style", 3, "ngClass"], ["for", "upload", 1, "d-flex", "justify-content-center", "w-100"], ["class", "profile-box label-txt", 4, "ngIf"], [1, "profile-box", "label-txt", "hidebox", 3, "ngClass"], [1, "frame-upload"], [1, "upload-demo-wrap"], ["id", "upload-demo"], [1, "d-flex", "img-footer"], ["class", "btn upload-result text-d200 demi-bold w-50", 3, "click", 4, "ngIf"], ["class", "btn upload-result text-b100 demi-bold w-50", "id", "sizeDisable", 3, "value", "click", 4, "ngIf"], [3, "ngIf"], ["class", "btn btn-pwd", 3, "click", 4, "ngIf"], ["type", "date", "formControlName", "dateOfBirth", 1, "form-control", 3, "ngClass"], [1, "d-flex"], [1, "mr-3"], [1, "radio-container"], ["id", "male", "type", "radio", "value", "male", "name", "gender", "formControlName", "gender", 1, "input-radio"], [1, "checkmark"], ["id", "female", "type", "radio", "value", "female", "name", "gender", "formControlName", "gender", 1, "input-radio"], ["formControlName", "year", 1, "form-control", "selected-box", 3, "ngClass", "change"], ["value", "", "disabled", "", "selected", ""], [3, "ngValue", 4, "ngFor", "ngForOf"], ["type", "text", "formControlName", "paidAmount", "placeholder", "Enter Paid Amount", "oninput", "this.value = this.value.replace(/[^0-9.]/g,\n            '').replace(/(\\..*)\\./g, '$1');", 1, "form-control", "input-style", 3, "ngClass"], [3, "months", "selectInstallmentMonths"], ["formControlName", "relationship", 1, "form-control", "selected-box", 3, "ngClass", "change"], ["formControlName", "description", "rows", "4", "placeholder", "Enter description", 1, "form-control", 3, "ngClass"], [1, "d-flex", "justify-content-end"], [1, "d-flex", "m-2", "flex-column"], [3, "btnSize", "onClick"], [3, "click"], [1, "profile-box", "label-txt"], [1, "circular-wrap"], ["class", "circular-profile create", 4, "ngIf"], ["class", "circular-profile", 4, "ngIf"], [1, "demo-wrap", "upload-wrapper"], [1, "grid"], [1, "col-1-2"], [1, "actions"], [1, "btn", "file-btn"], ["type", "file", "id", "upload", "value", "Choose a file", "accept", "image/*", 1, "upload-jpg", "form-control", 2, "display", "none", 3, "change"], ["cropper", ""], [1, "circular-profile", "create"], [1, "circular-profile"], [3, "profileImg"], [1, "btn", "upload-result", "text-d200", "demi-bold", "w-50", 3, "click"], ["id", "sizeDisable", 1, "btn", "upload-result", "text-b100", "demi-bold", "w-50", 3, "value", "click"], ["type", "password", "formControlName", "password", "placeholder", "Enter your password", 1, "form-control", "input-style", 3, "ngClass"], ["type", "password", "formControlName", "confirmPassword", "placeholder", "Enter your confirm password", 1, "form-control", "input-style", 3, "ngClass"], [1, "btn", "btn-pwd", 3, "click"], [3, "ngValue"]], template: function StudentCreateComponent_Template(rf, ctx) { if (rf & 1) {
+StudentCreateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: StudentCreateComponent, selectors: [["app-student-create"]], outputs: { addStudent: "addStudent", displayStudentForm: "displayStudentForm" }, decls: 82, vars: 36, consts: [[1, "d-flex", "justify-content-between", "align-items-center", "mt-3"], [3, "dirList"], [1, "col-md-8", "mx-auto", 3, "formGroup"], [1, "container"], [1, "row"], [1, "col-md-6", "form-group"], [1, "row", "mb-3"], [1, "col-md-12"], ["type", "text", "formControlName", "username", "placeholder", "Enter your name", 1, "form-control", "input-style", 3, "ngClass"], ["type", "email", "formControlName", "email", "placeholder", "Enter your email", 1, "form-control", "input-style", 3, "ngClass"], ["for", "upload", 1, "d-flex", "justify-content-center", "w-100"], ["class", "profile-box label-txt", 4, "ngIf"], [1, "profile-box", "label-txt", "hidebox", 3, "ngClass"], [1, "frame-upload"], [1, "upload-demo-wrap"], ["id", "upload-demo"], [1, "d-flex", "img-footer"], ["class", "btn upload-result text-d200 demi-bold w-50", 3, "click", 4, "ngIf"], ["class", "btn upload-result text-b100 demi-bold w-50", "id", "sizeDisable", 3, "value", "click", 4, "ngIf"], [3, "ngIf"], ["class", "btn btn-pwd", 3, "click", 4, "ngIf"], ["type", "date", "formControlName", "dateOfBirth", 1, "form-control", 3, "ngClass"], [1, "d-flex"], [1, "mr-3"], [1, "radio-container"], ["id", "male", "type", "radio", "value", "male", "name", "gender", "formControlName", "gender", 1, "input-radio"], [1, "checkmark"], ["id", "female", "type", "radio", "value", "female", "name", "gender", "formControlName", "gender", 1, "input-radio"], ["formControlName", "year", 1, "form-control", "selected-box", 3, "ngClass"], ["value", "", "disabled", "", "selected", ""], [3, "ngValue", 4, "ngFor", "ngForOf"], ["type", "text", "formControlName", "paidAmount", "placeholder", "Enter Paid Amount", "oninput", "this.value = this.value.replace(/[^0-9.]/g,\n            '').replace(/(\\..*)\\./g, '$1');", 1, "form-control", "input-style", 3, "ngClass"], [3, "months", "selectInstallmentMonths"], ["formControlName", "relationship", 1, "form-control", "selected-box", 3, "ngClass"], ["formControlName", "description", "rows", "4", "placeholder", "Enter description", 1, "form-control", 3, "ngClass"], [1, "d-flex", "justify-content-end"], [1, "d-flex", "m-2", "flex-column"], [3, "btnSize", "onClick"], [3, "click"], [1, "profile-box", "label-txt"], [1, "circular-wrap"], ["class", "circular-profile create", 4, "ngIf"], ["class", "circular-profile", 4, "ngIf"], [1, "demo-wrap", "upload-wrapper"], [1, "grid"], [1, "col-1-2"], [1, "actions"], [1, "btn", "file-btn"], ["type", "file", "id", "upload", "value", "Choose a file", "accept", "image/*", 1, "upload-jpg", "form-control", 2, "display", "none", 3, "change"], ["cropper", ""], [1, "circular-profile", "create"], [1, "circular-profile"], [3, "profileImg"], [1, "btn", "upload-result", "text-d200", "demi-bold", "w-50", 3, "click"], ["id", "sizeDisable", 1, "btn", "upload-result", "text-b100", "demi-bold", "w-50", 3, "value", "click"], ["type", "password", "formControlName", "password", "placeholder", "Enter your password", 1, "form-control", "input-style", 3, "ngClass"], ["type", "password", "formControlName", "confirmPassword", "placeholder", "Enter your confirm password", 1, "form-control", "input-style", 3, "ngClass"], [1, "btn", "btn-pwd", 3, "click"], [3, "ngValue"]], template: function StudentCreateComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-route-direction", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1593,7 +1590,6 @@ StudentCreateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](51, "Year");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](52, "select", 28);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function StudentCreateComponent_Template_select_change_52_listener($event) { return ctx.changeYear($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](53, "option", 29);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](54, "Select Year");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -1619,7 +1615,6 @@ StudentCreateComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵd
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](66, "Relationship");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](67, "select", 33);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("change", function StudentCreateComponent_Template_select_change_67_listener($event) { return ctx.changeRelationship($event); });
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](68, "option", 29);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](69, "Select Relationship");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
@@ -3607,4 +3602,4 @@ StudentViewComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdef
 /***/ })
 
 }]);
-//# sourceMappingURL=modules-users-users-module.f74684e3f73e0f242985.js.map
+//# sourceMappingURL=modules-users-users-module.550ac8c4c23d14e631e3.js.map

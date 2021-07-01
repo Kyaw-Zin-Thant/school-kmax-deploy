@@ -6499,170 +6499,95 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimetableComponent", function() { return TimetableComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @app/enum/app_enum */ "+Mrb");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _core_services_class_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/services/class.service */ "cNJU");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
 
-function TimetableComponent_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 8);
+
+function TimetableComponent_div_0_div_1_div_3_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](3, "img", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "p", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 6);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "img", 10);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](6, "div", 7);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](8, "img", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](9, "p", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 11);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 7);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "img", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](11, "div", 12);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "div", 8);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](13, "img", 13);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "p", 9);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](14, "p", 10);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](15);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const data_r3 = ctx.$implicit;
+    const data_r4 = ctx.$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r3.time, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r4.time, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r3.teacherName, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r4.teacherName, " ");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r3.className, " ");
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", data_r4.className, " ");
 } }
-function TimetableComponent_div_1_Template(rf, ctx) { if (rf & 1) {
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 3);
+function TimetableComponent_div_0_div_1_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 3);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "div", 4);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TimetableComponent_div_1_div_3_Template, 16, 3, "div", 4);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, TimetableComponent_div_0_div_1_div_3_Template, 16, 3, "div", 5);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const day_r1 = ctx.$implicit;
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const day_r2 = ctx.$implicit;
+    const ctx_r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"](2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](day_r1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](day_r2);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.timetableData[day_r1.toLowerCase()]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r1.timetableData[day_r2.toLowerCase()]);
+} }
+function TimetableComponent_div_0_Template(rf, ctx) { if (rf & 1) {
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TimetableComponent_div_0_div_1_Template, 4, 2, "div", 2);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+} if (rf & 2) {
+    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.days);
 } }
 class TimetableComponent {
-    constructor() {
+    constructor(_ser) {
+        this._ser = _ser;
         this.timetableData = {};
         this.days = [_app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Days"].Mon, _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Days"].Tue, _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Days"].Wed, _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Days"].Thu, _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Days"].Fri, _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Days"].Sat, _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Days"].Sun];
     }
     ngOnInit() {
-        this.timetableData = {
-            "sun": [
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                }
-            ],
-            "mon": [
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                }
-            ],
-            "tue": [
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                }
-            ],
-            "wed": [
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-            ],
-            "thu": [
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                }
-            ],
-            "fri": [
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                },
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                }
-            ],
-            "sat": [
-                {
-                    "time": "10 am - 11 am",
-                    "className": "Science",
-                    "teacherName": "Kyaw",
-                }
-            ]
-        };
+        this.getTimeLine();
+    }
+    getTimeLine() {
+        this._ser.getTimeLine().subscribe((res) => {
+            console.log(res);
+            this.timetableData = res;
+        });
     }
 }
-TimetableComponent.ɵfac = function TimetableComponent_Factory(t) { return new (t || TimetableComponent)(); };
-TimetableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TimetableComponent, selectors: [["app-timetable"]], inputs: { timetableData: "timetableData" }, decls: 2, vars: 1, consts: [[1, "timetable-wrapper"], ["class", "timetable-content", 4, "ngFor", "ngForOf"], [1, "timetable-content"], [1, "header_day"], ["class", "timetable-data", 4, "ngFor", "ngForOf"], [1, "timetable-data"], [1, "data-wrapper"], [1, "img"], ["src", "assets/icons/input_time.svg"], [1, "label-text"], ["src", "assets/icons/person_outlined.svg"], [1, "data-wrapper", "mb-0"], ["src", "assets/icons/class-fill.svg"]], template: function TimetableComponent_Template(rf, ctx) { if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, TimetableComponent_div_1_Template, 4, 2, "div", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
+TimetableComponent.ɵfac = function TimetableComponent_Factory(t) { return new (t || TimetableComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_services_class_service__WEBPACK_IMPORTED_MODULE_2__["ClassService"])); };
+TimetableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: TimetableComponent, selectors: [["app-timetable"]], decls: 1, vars: 1, consts: [["class", "timetable-wrapper", 4, "ngIf"], [1, "timetable-wrapper"], ["class", "timetable-content", 4, "ngFor", "ngForOf"], [1, "timetable-content"], [1, "header_day"], ["class", "timetable-data", 4, "ngFor", "ngForOf"], [1, "timetable-data"], [1, "data-wrapper"], [1, "img"], ["src", "assets/icons/input_time.svg"], [1, "label-text"], ["src", "assets/icons/person_outlined.svg"], [1, "data-wrapper", "mb-0"], ["src", "assets/icons/class-light.svg"]], template: function TimetableComponent_Template(rf, ctx) { if (rf & 1) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](0, TimetableComponent_div_0_Template, 2, 1, "div", 0);
     } if (rf & 2) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.days);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]], styles: [".timetable-wrapper[_ngcontent-%COMP%] {\n    display: flex;\n    width: 100%;\n    \n}\n\n.timetable-content[_ngcontent-%COMP%] {\n    flex: 1;\n}\n\n.header_day[_ngcontent-%COMP%] {\n    height: 45px;\n    background: #000000;\n    color: white;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-weight: bold;\n    border-right: solid 1px;\n}\n\n.timetable-data[_ngcontent-%COMP%] {\n    border: solid 1px;\n    padding: 10px;\n    margin: 1px;\n}\n\n.img[_ngcontent-%COMP%] {\n    width: 20px;\n    height: 20px;\n}\n\n.img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 100%;\n    height: 100%;\n    object-fit: contain;\n}\n\n.data-wrapper[_ngcontent-%COMP%]{\n    display: flex;\n    \n    margin-bottom: 10px;\n}\n\np.label-text[_ngcontent-%COMP%] {\n    margin-bottom: 0;\n    font-weight: 500;\n    margin-left: 10px;\n}\n\n.main-wrapper[_ngcontent-%COMP%]{\n    height: 100%;\n    overflow: overlay;\n    padding-bottom: 100px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2Jhc2ljLWNvbXBvbmVudHMvdGltZXRhYmxlL3RpbWV0YWJsZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksYUFBYTtJQUNiLFdBQVc7SUFDWCx1QkFBdUI7QUFDM0I7O0FBRUE7SUFDSSxPQUFPO0FBQ1g7O0FBRUE7SUFDSSxZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLFlBQVk7SUFDWixhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLHVCQUF1QjtJQUN2QixpQkFBaUI7SUFDakIsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGFBQWE7SUFDYixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixpQkFBaUI7SUFDakIscUJBQXFCO0FBQ3pCIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2Jhc2ljLWNvbXBvbmVudHMvdGltZXRhYmxlL3RpbWV0YWJsZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRpbWV0YWJsZS13cmFwcGVyIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIC8qIGJvcmRlcjogc29saWQgMXB4OyAqL1xufVxuXG4udGltZXRhYmxlLWNvbnRlbnQge1xuICAgIGZsZXg6IDE7XG59XG5cbi5oZWFkZXJfZGF5IHtcbiAgICBoZWlnaHQ6IDQ1cHg7XG4gICAgYmFja2dyb3VuZDogIzAwMDAwMDtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGJvcmRlci1yaWdodDogc29saWQgMXB4O1xufVxuXG4udGltZXRhYmxlLWRhdGEge1xuICAgIGJvcmRlcjogc29saWQgMXB4O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgbWFyZ2luOiAxcHg7XG59XG5cbi5pbWcge1xuICAgIHdpZHRoOiAyMHB4O1xuICAgIGhlaWdodDogMjBweDtcbn1cblxuLmltZyBpbWd7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG59XG5cbi5kYXRhLXdyYXBwZXJ7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICAvKiBhbGlnbi1pdGVtczogY2VudGVyOyAqL1xuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG5cbnAubGFiZWwtdGV4dCB7XG4gICAgbWFyZ2luLWJvdHRvbTogMDtcbiAgICBmb250LXdlaWdodDogNTAwO1xuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xufVxuXG4ubWFpbi13cmFwcGVye1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBvdmVyZmxvdzogb3ZlcmxheTtcbiAgICBwYWRkaW5nLWJvdHRvbTogMTAwcHg7XG59Il19 */"] });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.timetableData);
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_3__["NgForOf"]], styles: [".timetable-wrapper[_ngcontent-%COMP%] {\n    display: flex;\n    width: 100%;\n    \n}\n\n.timetable-content[_ngcontent-%COMP%] {\n    flex: 1;\n}\n\n.header_day[_ngcontent-%COMP%] {\n    height: 45px;\n    background: #000000;\n    color: white;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    font-weight: bold;\n    border-right: solid 1px;\n}\n\n.timetable-data[_ngcontent-%COMP%] {\n    border: solid 1px;\n    padding: 10px;\n    margin: 1px;\n}\n\n.img[_ngcontent-%COMP%] {\n    width: 20px;\n    height: 20px;\n}\n\n.img[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 100%;\n    height: 100%;\n    object-fit: contain;\n}\n\n.data-wrapper[_ngcontent-%COMP%]{\n    display: flex;\n    \n    margin-bottom: 10px;\n}\n\np.label-text[_ngcontent-%COMP%] {\n    margin-bottom: 0;\n    font-weight: 500;\n    margin-left: 10px;\n}\n\n.main-wrapper[_ngcontent-%COMP%]{\n    height: 100%;\n    overflow: overlay;\n    padding-bottom: 100px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2hhcmVkL2Jhc2ljLWNvbXBvbmVudHMvdGltZXRhYmxlL3RpbWV0YWJsZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksYUFBYTtJQUNiLFdBQVc7SUFDWCx1QkFBdUI7QUFDM0I7O0FBRUE7SUFDSSxPQUFPO0FBQ1g7O0FBRUE7SUFDSSxZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLFlBQVk7SUFDWixhQUFhO0lBQ2IsbUJBQW1CO0lBQ25CLHVCQUF1QjtJQUN2QixpQkFBaUI7SUFDakIsdUJBQXVCO0FBQzNCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGFBQWE7SUFDYixXQUFXO0FBQ2Y7O0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osbUJBQW1CO0FBQ3ZCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLHlCQUF5QjtJQUN6QixtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsZ0JBQWdCO0lBQ2hCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLFlBQVk7SUFDWixpQkFBaUI7SUFDakIscUJBQXFCO0FBQ3pCIiwiZmlsZSI6InNyYy9hcHAvc2hhcmVkL2Jhc2ljLWNvbXBvbmVudHMvdGltZXRhYmxlL3RpbWV0YWJsZS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnRpbWV0YWJsZS13cmFwcGVyIHtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIC8qIGJvcmRlcjogc29saWQgMXB4OyAqL1xufVxuXG4udGltZXRhYmxlLWNvbnRlbnQge1xuICAgIGZsZXg6IDE7XG59XG5cbi5oZWFkZXJfZGF5IHtcbiAgICBoZWlnaHQ6IDQ1cHg7XG4gICAgYmFja2dyb3VuZDogIzAwMDAwMDtcbiAgICBjb2xvcjogd2hpdGU7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIGJvcmRlci1yaWdodDogc29saWQgMXB4O1xufVxuXG4udGltZXRhYmxlLWRhdGEge1xuICAgIGJvcmRlcjogc29saWQgMXB4O1xuICAgIHBhZGRpbmc6IDEwcHg7XG4gICAgbWFyZ2luOiAxcHg7XG59XG5cbi5pbWcge1xuICAgIHdpZHRoOiAyMHB4O1xuICAgIGhlaWdodDogMjBweDtcbn1cblxuLmltZyBpbWd7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIG9iamVjdC1maXQ6IGNvbnRhaW47XG59XG5cbi5kYXRhLXdyYXBwZXJ7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICAvKiBhbGlnbi1pdGVtczogY2VudGVyOyAqL1xuICAgIG1hcmdpbi1ib3R0b206IDEwcHg7XG59XG5cbnAubGFiZWwtdGV4dCB7XG4gICAgbWFyZ2luLWJvdHRvbTogMDtcbiAgICBmb250LXdlaWdodDogNTAwO1xuICAgIG1hcmdpbi1sZWZ0OiAxMHB4O1xufVxuXG4ubWFpbi13cmFwcGVye1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBvdmVyZmxvdzogb3ZlcmxheTtcbiAgICBwYWRkaW5nLWJvdHRvbTogMTAwcHg7XG59Il19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](TimetableComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -6670,9 +6595,7 @@ TimetableComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefin
                 templateUrl: './timetable.component.html',
                 styleUrls: ['./timetable.component.css']
             }]
-    }], function () { return []; }, { timetableData: [{
-            type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"]
-        }] }); })();
+    }], function () { return [{ type: _core_services_class_service__WEBPACK_IMPORTED_MODULE_2__["ClassService"] }]; }, null); })();
 
 
 /***/ }),
@@ -23974,4 +23897,4 @@ LabelComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
 /***/ })
 
 }]);
-//# sourceMappingURL=default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17.924d5b8bd3c56e6297bd.js.map
+//# sourceMappingURL=default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17.efafcb7006e0e91e6217.js.map

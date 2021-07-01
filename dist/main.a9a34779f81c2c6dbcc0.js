@@ -4,7 +4,7 @@
 /*!**********************************!*\
   !*** ./src/app/enum/app_enum.ts ***!
   \**********************************/
-/*! exports provided: Role, AdminSideMenu, CommonExpands, TeacherSideMenu, UserExpands, AdminRoute, StudentAffairRoute, TeacherRoute, ParentRoute, StudentRoute, EssentialRoute, IconStatus, Label, ActionLabel, Relationship, Position, StudentRelationship, PaymentInstallmentMonths, Days */
+/*! exports provided: Role, AdminSideMenu, CommonExpands, TeacherSideMenu, UserExpands, AdminRoute, StudentAffairRoute, TeacherRoute, ParentRoute, StudentRoute, EssentialRoute, IconStatus, Label, ActionLabel, Relationship, AdminPosition, TeacherPosition, StaffPosition, StudentRelationship, PaymentInstallmentMonths, Days */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -24,7 +24,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Label", function() { return Label; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionLabel", function() { return ActionLabel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Relationship", function() { return Relationship; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Position", function() { return Position; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminPosition", function() { return AdminPosition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherPosition", function() { return TeacherPosition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StaffPosition", function() { return StaffPosition; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentRelationship", function() { return StudentRelationship; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentInstallmentMonths", function() { return PaymentInstallmentMonths; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Days", function() { return Days; });
@@ -198,16 +200,37 @@ var Relationship;
 (function (Relationship) {
     Relationship["Mother"] = "Mother";
     Relationship["Father"] = "Father";
+    Relationship["Guardian"] = "Guardian";
 })(Relationship || (Relationship = {}));
-var Position;
-(function (Position) {
-    Position["Office_Staff"] = "Office Staff";
-    Position["Seniorteacher"] = "Senior teacher";
-})(Position || (Position = {}));
+var AdminPosition;
+(function (AdminPosition) {
+    AdminPosition["Principal"] = "Principal";
+    AdminPosition["VicePrincipal"] = "Vice Principal";
+    AdminPosition["HOD"] = "HOD";
+    AdminPosition["Coordinator"] = "Coordinator";
+    AdminPosition["BOD"] = "BOD";
+    AdminPosition["Secretary"] = "Secretary";
+})(AdminPosition || (AdminPosition = {}));
+var TeacherPosition;
+(function (TeacherPosition) {
+    TeacherPosition["HomeroomTeacher"] = "Homeroom Teacher";
+    TeacherPosition["SubjectTeacher"] = "Subject Teacher";
+    TeacherPosition["AssitantTeacher"] = "Assitant Teacher";
+})(TeacherPosition || (TeacherPosition = {}));
+var StaffPosition;
+(function (StaffPosition) {
+    StaffPosition["Receptionist"] = "Receptionist";
+    StaffPosition["Accountant"] = "Accountant";
+    StaffPosition["Librarain"] = "Librarain";
+    StaffPosition["OfficeStaff"] = "Office Staff";
+})(StaffPosition || (StaffPosition = {}));
 var StudentRelationship;
 (function (StudentRelationship) {
     StudentRelationship["Son"] = "Son";
     StudentRelationship["Daughter"] = "Daughter";
+    StudentRelationship["Nephew"] = "Nephew";
+    StudentRelationship["Niece"] = "Niece";
+    StudentRelationship["Grandchild"] = "Grandchild";
 })(StudentRelationship || (StudentRelationship = {}));
 var PaymentInstallmentMonths;
 (function (PaymentInstallmentMonths) {
@@ -645,7 +668,6 @@ class SupportService {
         this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].apiUrl;
     }
     getIcon(type, status = null) {
-        console.log(status);
         let url = "assets/icons/";
         switch (type) {
             case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Home:
@@ -681,7 +703,6 @@ class SupportService {
         this._loc.back();
     }
     onDelete(id, type) {
-        console.log(id, "<<>>", type);
         let url = this.baseUrl + "/" + type + "/" + id;
         return this.http
             .delete(url)
@@ -1526,6 +1547,10 @@ class ClassService {
     getFeedbackChat(classId, feedBack) {
         let url = this.baseUrl + "/classes/" + classId + "/feedback/" + feedBack + "/chat";
         return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
+    }
+    getTimeLine() {
+        let url = this.baseUrl + "/classes/timeline";
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
     }
 }
 ClassService.ɵfac = function ClassService_Factory(t) { return new (t || ClassService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
@@ -2387,4 +2412,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.57e65d8b1ae5a8bef5ab.js.map
+//# sourceMappingURL=main.a9a34779f81c2c6dbcc0.js.map
