@@ -418,7 +418,7 @@ const environment = {
     production: false,
     // apiUrl :'http://localhost:4000',
     // apiUrl:'https://quiet-shelf-92207.herokuapp.com/api/v1',
-    apiUrl: 'http://ec2-52-221-194-25.ap-southeast-1.compute.amazonaws.com:5000/api/v1',
+    apiUrl: 'https://www.kmax.education/api/v1',
     enableDebug: false
 };
 /*
@@ -2368,4 +2368,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.907cc9b7ec5177943fbb.js.map
+//# sourceMappingURL=main.49a91797b26da21fc015.js.map
