@@ -4,7 +4,7 @@
 /*!**********************************!*\
   !*** ./src/app/enum/app_enum.ts ***!
   \**********************************/
-/*! exports provided: Role, AdminSideMenu, CommonExpands, TeacherSideMenu, UserExpands, AdminRoute, StudentAffairRoute, TeacherRoute, ParentRoute, StudentRoute, EssentialRoute, IconStatus, Label, ActionLabel, Relationship, AdminPosition, TeacherPosition, StaffPosition, StudentRelationship, PaymentInstallmentMonths, Days */
+/*! exports provided: Role, AdminSideMenu, CommonExpands, TeacherSideMenu, UserExpands, AdminRoute, IconStatus, Label, ActionLabel, Relationship, Position, StudentRelationship, PaymentInstallmentMonths, Days */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -15,28 +15,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherSideMenu", function() { return TeacherSideMenu; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UserExpands", function() { return UserExpands; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminRoute", function() { return AdminRoute; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentAffairRoute", function() { return StudentAffairRoute; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherRoute", function() { return TeacherRoute; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ParentRoute", function() { return ParentRoute; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentRoute", function() { return StudentRoute; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EssentialRoute", function() { return EssentialRoute; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconStatus", function() { return IconStatus; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Label", function() { return Label; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ActionLabel", function() { return ActionLabel; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Relationship", function() { return Relationship; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminPosition", function() { return AdminPosition; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TeacherPosition", function() { return TeacherPosition; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StaffPosition", function() { return StaffPosition; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Position", function() { return Position; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StudentRelationship", function() { return StudentRelationship; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaymentInstallmentMonths", function() { return PaymentInstallmentMonths; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Days", function() { return Days; });
 var Role;
 (function (Role) {
     Role["Admin"] = "Admin";
-    Role["Student"] = "Student";
-    Role["Parent"] = "Parent";
-    Role["Teacher"] = "Teacher";
-    Role["StudentAffair"] = "Student Affair";
+    Role["Trainer"] = "Trainer";
+    Role["Member"] = "Member";
 })(Role || (Role = {}));
 var AdminSideMenu;
 (function (AdminSideMenu) {
@@ -63,72 +54,22 @@ var TeacherSideMenu;
 var UserExpands;
 (function (UserExpands) {
     UserExpands["Admin"] = "Administrators";
-    UserExpands["Teacher"] = "Teachers";
-    UserExpands["Student"] = "Students";
-    UserExpands["StudentAffair"] = "Students Affair";
-    UserExpands["Parent"] = "Parents";
+    UserExpands["Trainer"] = "Trainer";
+    UserExpands["Member"] = "Member";
     UserExpands["Create"] = "Create";
 })(UserExpands || (UserExpands = {}));
 var AdminRoute;
 (function (AdminRoute) {
-    AdminRoute["Home"] = "/admin/home/admin-home";
-    AdminRoute["UserAdmin"] = "/admin/users/admin-management/admin";
-    AdminRoute["UserTeacher"] = "/admin/users/teacher-management/teacher";
-    AdminRoute["UserParent"] = "/admin/users/parent-management/parent";
-    AdminRoute["UserStudent"] = "/admin/users/student-management/student";
-    AdminRoute["UserStudentAffair"] = "/admin/users/studentAffair-management/student%20affair";
-    AdminRoute["UserCreate"] = "/admin/users/create/admin";
-    AdminRoute["ClassManagement"] = "/admin/classes/management";
-    AdminRoute["ClassCreate"] = "/admin/classes/create";
-    AdminRoute["Year"] = "/admin/years/management";
-    AdminRoute["Report"] = "/admin/reports/management";
+    AdminRoute["Home"] = "/kmax/home";
+    AdminRoute["UserAdmin"] = "/kmax/users/lists/admin";
+    AdminRoute["UserTrainer"] = "/kmax/users/lists/trainer";
+    AdminRoute["UserMemeber"] = "/kmax/users/lists/member";
+    AdminRoute["UserCreate"] = "/kmax/users/create";
 })(AdminRoute || (AdminRoute = {}));
-var StudentAffairRoute;
-(function (StudentAffairRoute) {
-    StudentAffairRoute["Home"] = "/student%20affair/home/student%20affair-home";
-    StudentAffairRoute["UserAdmin"] = "/student%20affair/users/admin-management/admin";
-    StudentAffairRoute["UserTeacher"] = "/student%20affair/users/lists/teacher";
-    StudentAffairRoute["UserParent"] = "/student%20affair/users/lists/parent";
-    StudentAffairRoute["UserStudent"] = "/student%20affair/users/lists/student";
-    StudentAffairRoute["UserStudentAffair"] = "/student%20affair/users/lists/student%20affair";
-    StudentAffairRoute["ClassManagement"] = "/student%20affair/classes/management";
-    StudentAffairRoute["ClassCreate"] = "/student%20affair/classes/create";
-    StudentAffairRoute["Year"] = "/student%20affair/years/management";
-    StudentAffairRoute["Report"] = "/student%20affair/reports/management";
-})(StudentAffairRoute || (StudentAffairRoute = {}));
-var TeacherRoute;
-(function (TeacherRoute) {
-    TeacherRoute["Home"] = "/teacher/home/teacher-home";
-    TeacherRoute["ClassManagement"] = "/teacher/classes/management";
-    TeacherRoute["LessonPlanManage"] = "/teacher/lesson-plans/management";
-    TeacherRoute["LessonCreate"] = "/teacher/lesson-plans/create";
-    TeacherRoute["Report"] = "/teacher/reports/management";
-})(TeacherRoute || (TeacherRoute = {}));
-var ParentRoute;
-(function (ParentRoute) {
-    ParentRoute["Home"] = "/parent/home/parent-home";
-    ParentRoute["ClassManagement"] = "/parent/classes/management";
-})(ParentRoute || (ParentRoute = {}));
-var StudentRoute;
-(function (StudentRoute) {
-    StudentRoute["Home"] = "/student/home/student-home";
-})(StudentRoute || (StudentRoute = {}));
-var EssentialRoute;
-(function (EssentialRoute) {
-    EssentialRoute["ClassEdit"] = "classes/management/detail/edit";
-    EssentialRoute["ClassDetail"] = "classes/management/detail";
-    EssentialRoute["StudentByReport"] = "reports/students";
-    EssentialRoute["ReportList"] = "reports/management";
-    EssentialRoute["ReportEdit"] = "reports/teacher-report/students/edit";
-    EssentialRoute["LessonList"] = "lesson-plans/management";
-    EssentialRoute["ClassList"] = "classes/management";
-    EssentialRoute["UserEdit"] = "users/edit";
-})(EssentialRoute || (EssentialRoute = {}));
 var IconStatus;
 (function (IconStatus) {
     IconStatus["active"] = "active";
     IconStatus["fill"] = "fill";
-    IconStatus["light"] = "light";
 })(IconStatus || (IconStatus = {}));
 var Label;
 (function (Label) {
@@ -139,42 +80,18 @@ var Label;
     Label["DOB"] = "Date of birth";
     Label["startDate"] = "Start date";
     Label["endDate"] = "End date";
-    Label["education"] = "Education";
     Label["phonenumber"] = "Phone Number";
-    Label["emergecyContact"] = "Emergecy Contact";
     Label["address"] = "Address";
-    Label["relation"] = "Relation";
-    Label["paidAmount"] = "Paid amount";
-    Label["paymentInstallmentMonths"] = "Payment installment months";
     Label["description"] = "Description";
     Label["action"] = "Action";
-    Label["grade"] = "Grade";
-    Label["startTime"] = "Start time";
-    Label["endTime"] = "End time";
-    Label["days"] = "Days";
-    Label["payDate"] = "Pay date";
-    Label["studentName"] = "Student Name";
-    Label["className"] = "Class Name";
-    Label["paymonths"] = "Pay months";
-    Label["amount"] = "Amount";
-    Label["student"] = "Student";
-    Label["to"] = "To";
-    Label["year"] = "Year";
-    Label["duration"] = "Duration";
-    Label["day"] = "Day";
-    Label["studentLists"] = "Student Lists";
-    Label["lastModified"] = "Last Modified";
-    Label["fileSize"] = "File Size";
-    Label["file"] = "File";
+    Label["accountNo"] = "Account no";
+    Label["accountType"] = "Account type";
+    Label["paytype"] = "Payment type";
+    Label["status"] = "Status";
+    Label["payAccount"] = "Pay account";
+    Label["payAccountType"] = "Pay account type";
     Label["createDate"] = "Create date";
-    Label["updateDate"] = "Update date";
-    Label["title"] = "Title";
-    Label["date"] = "Date";
-    Label["class"] = "Class";
-    Label["concept"] = "Concept";
-    Label["assessment"] = "Assessment";
-    Label["maxScore"] = "Max Score";
-    Label["note"] = "Note";
+    Label["amount"] = "Amount";
 })(Label || (Label = {}));
 var ActionLabel;
 (function (ActionLabel) {
@@ -185,53 +102,27 @@ var ActionLabel;
     ActionLabel["assessment"] = "Assessment";
     ActionLabel["assessmentScore"] = "Assessment Score";
     ActionLabel["view"] = "View";
-    ActionLabel["timetable"] = "Timetable";
-    ActionLabel["homework"] = "Homework";
-    ActionLabel["feedback"] = "Feedback";
     ActionLabel["save"] = "Save";
     ActionLabel["cancel"] = "Cancel";
     ActionLabel["viewmore"] = "View More";
     ActionLabel["chooseFile"] = "Choose File";
-    ActionLabel["teacherTimeline"] = "Teacher timeline";
     ActionLabel["paymentInfo"] = "Payment Info";
-    ActionLabel["attandance"] = "Attandance";
-    ActionLabel["payment"] = "Payment";
+    ActionLabel["accountInfo"] = "Account Info";
 })(ActionLabel || (ActionLabel = {}));
 var Relationship;
 (function (Relationship) {
     Relationship["Mother"] = "Mother";
     Relationship["Father"] = "Father";
-    Relationship["Guardian"] = "Guardian";
 })(Relationship || (Relationship = {}));
-var AdminPosition;
-(function (AdminPosition) {
-    AdminPosition["Principal"] = "Principal";
-    AdminPosition["VicePrincipal"] = "Vice Principal";
-    AdminPosition["HOD"] = "HOD";
-    AdminPosition["Coordinator"] = "Coordinator";
-    AdminPosition["BOD"] = "BOD";
-    AdminPosition["Secretary"] = "Secretary";
-})(AdminPosition || (AdminPosition = {}));
-var TeacherPosition;
-(function (TeacherPosition) {
-    TeacherPosition["HomeroomTeacher"] = "Homeroom Teacher";
-    TeacherPosition["SubjectTeacher"] = "Subject Teacher";
-    TeacherPosition["AssitantTeacher"] = "Assitant Teacher";
-})(TeacherPosition || (TeacherPosition = {}));
-var StaffPosition;
-(function (StaffPosition) {
-    StaffPosition["Receptionist"] = "Receptionist";
-    StaffPosition["Accountant"] = "Accountant";
-    StaffPosition["Librarain"] = "Librarain";
-    StaffPosition["OfficeStaff"] = "Office Staff";
-})(StaffPosition || (StaffPosition = {}));
+var Position;
+(function (Position) {
+    Position["Office_Staff"] = "Office Staff";
+    Position["Seniorteacher"] = "Senior teacher";
+})(Position || (Position = {}));
 var StudentRelationship;
 (function (StudentRelationship) {
     StudentRelationship["Son"] = "Son";
     StudentRelationship["Daughter"] = "Daughter";
-    StudentRelationship["Nephew"] = "Nephew";
-    StudentRelationship["Niece"] = "Niece";
-    StudentRelationship["Grandchild"] = "Grandchild";
 })(StudentRelationship || (StudentRelationship = {}));
 var PaymentInstallmentMonths;
 (function (PaymentInstallmentMonths) {
@@ -418,7 +309,7 @@ const environment = {
     production: false,
     // apiUrl :'http://localhost:4000',
     // apiUrl:'https://quiet-shelf-92207.herokuapp.com/api/v1',
-    apiUrl: 'https://www.kmax.education/api/v1',
+    apiUrl: 'http://ec2-18-116-39-16.us-east-2.compute.amazonaws.com:5000/api/v1',
     enableDebug: false
 };
 /*
@@ -429,78 +320,6 @@ const environment = {
  * on performance if an error is thrown.
  */
 // import 'zone.js/dist/zone-error';  // Included with Angular CLI.
-
-
-/***/ }),
-
-/***/ "CTLJ":
-/*!*****************************************************!*\
-  !*** ./src/app/core/services/lessonplan.service.ts ***!
-  \*****************************************************/
-/*! exports provided: LessonplanService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LessonplanService", function() { return LessonplanService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-
-
-
-
-
-class LessonplanService {
-    constructor(http) {
-        this.http = http;
-        this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
-    }
-    getLessonList(searchData, page, limt, sortColumn, SortDirection) {
-        let url;
-        if (searchData)
-            url = this.baseUrl + "/lesson-plans" + "?search=" + searchData;
-        else
-            url =
-                this.baseUrl +
-                    "/lesson-plans" + "?page=" +
-                    page +
-                    "&limit=" +
-                    limt +
-                    "&sortColumn=" +
-                    sortColumn +
-                    "&sortDirection=" +
-                    SortDirection;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onCreateLessonPlan(lessonPlan) {
-        let url = this.baseUrl + "/lesson-plans/";
-        var formData = new FormData();
-        formData.append("name", lessonPlan.name);
-        formData.append("lesssonPlan", lessonPlan.lesssonPlan);
-        return this.http.post(url, formData);
-    }
-    onUpdateLessonPlan(lessonPlan) {
-        let url = this.baseUrl + "/lesson-plans/" + lessonPlan._id;
-        var formData = new FormData();
-        formData.append("name", lessonPlan.name);
-        formData.append("lesssonPlan", lessonPlan.lesssonPlan);
-        return this.http.put(url, formData);
-    }
-    getLessonPlanDetail(lessonPlanId) {
-        let url = this.baseUrl + "/lesson-plans/" + lessonPlanId;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-}
-LessonplanService.ɵfac = function LessonplanService_Factory(t) { return new (t || LessonplanService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
-LessonplanService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: LessonplanService, factory: LessonplanService.ɵfac, providedIn: 'root' });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](LessonplanService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
@@ -568,7 +387,6 @@ class ServerErrorInterceptor {
                 errorMessage.message = `Error: ${error.error.message ? error.error.message : error.message}`;
             }
             else {
-                console.log("server side", error);
                 // server-side error
                 errorMessage.status = error.status;
                 errorMessage.message = `Message: ${error.error.message ? error.error.message : error.message}`;
@@ -636,11 +454,8 @@ class SupportService {
             case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["CommonExpands"].Create:
                 return `${url + this.checkIconType("create", status) + ".svg"}`;
             case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Admin:
-            case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Teacher:
-            case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].StudentAffair:
-            case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Parent:
-            case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Student:
-                console.log(this.checkIconType("user", status));
+            case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Member:
+            case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Trainer:
                 return `${url + this.checkIconType("user", status) + ".svg"}`;
             default:
                 return null;
@@ -849,86 +664,24 @@ class SideMenuComponent {
                 {
                     id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].User, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserAdmin, activeRoute: 'users',
                     expand: [
-                        { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Admin, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserAdmin, expandRoute: 'admin-management' },
-                        { id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Teacher, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserTeacher, expandRoute: 'teacher-management' },
-                        { id: 3, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Parent, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserParent, expandRoute: 'parent-management' },
-                        { id: 4, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Student, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserStudent, expandRoute: 'student-management' },
-                        { id: 5, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].StudentAffair, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserStudentAffair, expandRoute: 'studentAffair-management' },
+                        { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Admin, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserAdmin, expandRoute: 'admin' },
+                        { id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Trainer, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserTrainer, expandRoute: 'trainer' },
+                        { id: 3, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Member, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserMemeber, expandRoute: 'member' },
                         { id: 6, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Create, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserCreate, expandRoute: 'create' }
                     ]
                 },
-                {
-                    id: 3, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Class, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].ClassManagement, activeRoute: 'classes',
-                    expand: [
-                        { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["CommonExpands"].Manage, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].ClassManagement, expandRoute: 'management' },
-                        { id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["CommonExpands"].Create, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].ClassCreate, expandRoute: 'create' },
-                    ]
-                },
-                { id: 4, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Year, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].Year, activeRoute: 'years' },
-                { id: 5, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Report, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].Report, activeRoute: 'reports' },
-            ],
-            studentaffair: [
-                { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Home, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].Home, isExpand: false },
-                {
-                    id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].User, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].Home,
-                    expand: [
-                        { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Admin, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].UserAdmin },
-                        { id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Teacher, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].UserTeacher },
-                        { id: 3, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Parent, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].UserParent },
-                        { id: 4, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Student, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].UserStudent },
-                        { id: 5, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].StudentAffair, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].UserStudentAffair }
-                    ]
-                },
-                {
-                    id: 3, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Class, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].ClassManagement,
-                    expand: [
-                        { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["CommonExpands"].Manage, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].ClassManagement },
-                        { id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["CommonExpands"].Create, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].ClassCreate },
-                    ]
-                },
-                { id: 4, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Year, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].Year },
-                { id: 5, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Report, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentAffairRoute"].Report },
-            ],
-            teacher: [
-                { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].Home, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherRoute"].Home, activeRoute: 'home', },
-                {
-                    id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].Class, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherRoute"].ClassManagement, activeRoute: 'classes',
-                    expand: []
-                },
-                {
-                    id: 4, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].LessonPlan,
-                    routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherRoute"].LessonPlanManage,
-                    activeRoute: 'lesson-plans',
-                    expand: [
-                        { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["CommonExpands"].Manage, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherRoute"].LessonPlanManage, expandRoute: 'management' },
-                        { id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["CommonExpands"].Create, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherRoute"].LessonCreate, expandRoute: 'create' },
-                    ],
-                },
-                { id: 5, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].Report, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherRoute"].Report, activeRoute: 'reports' },
-            ],
-            parent: [
-                { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].Home, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["ParentRoute"].Home, activeRoute: 'home' },
-                {
-                    id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].Class, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["ParentRoute"].ClassManagement, activeRoute: 'classes',
-                    expand: []
-                },
-            ],
-            student: [
-                { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].Home, expand: [], routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["StudentRoute"].Home, activeRoute: 'classes' },
-            ],
+            ]
         };
         this.currentMenus = [];
         this.userData = {};
     }
     ngOnInit() {
-        this._activeRoute.params.subscribe(params => {
-            console.log("here");
+        this._activeRoute.params.subscribe(() => {
             setTimeout(() => {
                 this.currentRoute = this._router.url;
                 this.currentRoutes = this._router.url.split("/");
                 this.userData = this._auth.currentUserValue;
-                console.log(this.userData);
-                let role = this.userData.role.replace(/[\s\t]+/g, '');
+                let role = this.userData.userType.replace(/[\s\t]+/g, '');
                 this.tempmenu = this.menuLists[role.toLowerCase()];
                 this.checkLists();
             }, 200);
@@ -981,7 +734,7 @@ SideMenuComponent.ɵfac = function SideMenuComponent_Factory(t) { return new (t 
 SideMenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: SideMenuComponent, selectors: [["app-side-menu"]], decls: 27, vars: 6, consts: [[1, "d-flex", "justify-content-between", "align-items-center", "header"], [1, "title"], [1, "d-flex"], [1, "img-wrapper"], [3, "src", "hidden", "load", 4, "ngIf"], ["src", "assets/icons/user.svg", 3, "load", 4, "ngIf"], ["src", "assets/icons/image-loading.gif", 3, "hidden"], [1, "d-flex", "flex-column"], [1, "user-name"], [1, "user-role"], [1, "d-flex", "h-100", "overflow-hidden"], [1, "side-wrapper"], ["class", "d-flex flex-column side-content", 4, "ngFor", "ngForOf"], [1, "d-flex", "side-content"], [1, "nav-link", 3, "click"], [1, "d-flex", "justify-content-between"], [1, "icon-wrapper"], ["src", "assets/icons/logout.svg"], [1, "container"], [3, "src", "hidden", "load"], ["src", "assets/icons/user.svg", 3, "load"], [1, "d-flex", "flex-column", "side-content"], [1, "nav-link", 3, "ngClass", "click"], [3, "src"], ["src", "assets/icons/back.svg"], ["class", "expand-menu", 3, "ngClass", 4, "ngIf"], [1, "expand-menu", 3, "ngClass"], [3, "click", 4, "ngFor", "ngForOf"], [3, "click"], [1, "expand-link", 3, "ngClass"], ["class", "icon-wrapper", 4, "ngIf"]], template: function SideMenuComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "School Management System");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "KMAX Fitness");
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](4, "div", 3);
@@ -1031,12 +784,12 @@ SideMenuComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("hidden", !ctx.isImgLoad);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userData.username);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userData.email);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userData.role);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](ctx.userData.userType);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](3);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.currentMenus);
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _app_modules_spinner_loader_spinner_loader_component__WEBPACK_IMPORTED_MODULE_6__["SpinnerLoaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgClass"]], styles: [".container[_ngcontent-%COMP%]{\n  margin-top: 70px;\n  \n  \n}\n\n.header[_ngcontent-%COMP%] {\n    height: 60px;\n    background: #000000;\n    padding: 35px 30px;\n    position: fixed;\n    width: 100%;\n}\n.img-wrapper[_ngcontent-%COMP%] {\n  padding: 5px;\n  width: 50px;\n  height: 50px;\n  margin-right: 15px;\n  background: #4A4A4A;\n  border-radius: 50%;\n}\n.img-wrapper[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    border-radius: 50%;\n}\np.title[_ngcontent-%COMP%] {\n    color: #FFFFFF;\n    font-size: 16px;\n    font-weight: bold;\n    margin-bottom: 0;\n}\n.user-name[_ngcontent-%COMP%], .user-role[_ngcontent-%COMP%]{\n    color: #FFFFFF;\n    font-size: 14px;\n}\n.user-name[_ngcontent-%COMP%] {\n\n    font-weight: bold;\n}\n\n\n.side-wrapper[_ngcontent-%COMP%] {\n    background-color: #000000;\n    width: 240px;\n    height: 100%;\n    padding: 10px 0;\n    margin-top: 70px;\n  }\n.nav-link[_ngcontent-%COMP%] {\n    height: 40px;\n    align-items: center;\n    padding-left:30px;\n    margin-bottom: 15px;\n    width: 100%;\n    display: flex;\n  }\n.nav-link[_ngcontent-%COMP%]:hover{\n    background-color: #2F2F2F;\n  }\n.nav-link[_ngcontent-%COMP%]    > div[_ngcontent-%COMP%] > div[_ngcontent-%COMP%] > span[_ngcontent-%COMP%]{\n    font-size: 12px;\n    color: #FFFFFF;\n    padding-left: 15px;\n  }\n.icon-wrapper[_ngcontent-%COMP%]{\n    display: inline-block;\n  }\n.nav-link[_ngcontent-%COMP%]{\n    color: #FFFFFF;\n  }\n.nav-link[_ngcontent-%COMP%], *[_ngcontent-%COMP%]{\n      cursor: pointer;\n  }\n.nav-link[_ngcontent-%COMP%]    > div[_ngcontent-%COMP%]{\n      width: inherit;\n  }\na.nav-link.active[_ngcontent-%COMP%] {\n    background-color: #DD4B4A;\n    margin-bottom: 5px;\n  }\n\na.expand-link[_ngcontent-%COMP%] {\n    color: #FFFFFF;\n    width: 100%;\n    background-color: #2F2F2F;\n    display: flex;\n    font-size: 12px;\n    font-weight: 500;\n    height: 35px;\n    align-items: center;\n    margin-bottom: 5px;\n    padding-left: 60px;\n  }\n.expand-link[_ngcontent-%COMP%]    > .icon-wrapper[_ngcontent-%COMP%]{\n    opacity: 0.8;\n    padding-right: 15px;\n  }\na.expand-link.active-expand[_ngcontent-%COMP%] {\n    color: #DD4B4A !important;\n    font-weight: bold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9zaWRlLW1lbnUvc2lkZS1tZW51LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7RUFDaEIsdUJBQXVCO0VBQ3ZCLGdCQUFnQjtBQUNsQjtBQUNBLFdBQVc7QUFDWDtJQUNJLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsa0JBQWtCO0lBQ2xCLGVBQWU7SUFDZixXQUFXO0FBQ2Y7QUFFQTtFQUNFLFlBQVk7RUFDWixXQUFXO0VBQ1gsWUFBWTtFQUNaLGtCQUFrQjtFQUNsQixtQkFBbUI7RUFDbkIsa0JBQWtCO0FBQ3BCO0FBRUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtJQUNaLGlCQUFpQjtJQUNqQixrQkFBa0I7QUFDdEI7QUFFQTtJQUNJLGNBQWM7SUFDZCxlQUFlO0lBQ2YsaUJBQWlCO0lBQ2pCLGdCQUFnQjtBQUNwQjtBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7QUFDbkI7QUFFQTs7SUFFSSxpQkFBaUI7QUFDckI7QUFFQSxXQUFXO0FBRVgsY0FBYztBQUVkO0lBQ0kseUJBQXlCO0lBQ3pCLFlBQVk7SUFDWixZQUFZO0lBQ1osZUFBZTtJQUNmLGdCQUFnQjtFQUNsQjtBQUVBO0lBQ0UsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixpQkFBaUI7SUFDakIsbUJBQW1CO0lBQ25CLFdBQVc7SUFDWCxhQUFhO0VBQ2Y7QUFFQTtJQUNFLHlCQUF5QjtFQUMzQjtBQUVBO0lBQ0UsZUFBZTtJQUNmLGNBQWM7SUFDZCxrQkFBa0I7RUFDcEI7QUFFQTtJQUNFLHFCQUFxQjtFQUN2QjtBQUVBO0lBQ0UsY0FBYztFQUNoQjtBQUVBO01BQ0ksZUFBZTtFQUNuQjtBQUNBO01BQ0ksY0FBYztFQUNsQjtBQUNBO0lBQ0UseUJBQXlCO0lBQ3pCLGtCQUFrQjtFQUNwQjtBQU1BLFdBQVc7QUFDWDtJQUNFLGNBQWM7SUFDZCxXQUFXO0lBQ1gseUJBQXlCO0lBQ3pCLGFBQWE7SUFDYixlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLFlBQVk7SUFDWixtQkFBbUI7SUFDbkIsa0JBQWtCO0lBQ2xCLGtCQUFrQjtFQUNwQjtBQUVBO0lBQ0UsWUFBWTtJQUNaLG1CQUFtQjtFQUNyQjtBQUVBO0lBQ0UseUJBQXlCO0lBQ3pCLGlCQUFpQjtBQUNyQiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvc2lkZS1tZW51L3NpZGUtbWVudS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmNvbnRhaW5lcntcbiAgbWFyZ2luLXRvcDogNzBweDtcbiAgLyogb3ZlcmZsb3c6IG92ZXJsYXk7ICovXG4gIC8qIHBhZGRpbmc6IDA7ICovXG59XG4vKiBoZWFkZXIgKi9cbi5oZWFkZXIge1xuICAgIGhlaWdodDogNjBweDtcbiAgICBiYWNrZ3JvdW5kOiAjMDAwMDAwO1xuICAgIHBhZGRpbmc6IDM1cHggMzBweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgd2lkdGg6IDEwMCU7XG59XG5cbi5pbWctd3JhcHBlciB7XG4gIHBhZGRpbmc6IDVweDtcbiAgd2lkdGg6IDUwcHg7XG4gIGhlaWdodDogNTBweDtcbiAgbWFyZ2luLXJpZ2h0OiAxNXB4O1xuICBiYWNrZ3JvdW5kOiAjNEE0QTRBO1xuICBib3JkZXItcmFkaXVzOiA1MCU7XG59XG5cbi5pbWctd3JhcHBlciBpbWd7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIG9iamVjdC1maXQ6IGNvdmVyO1xuICAgIGJvcmRlci1yYWRpdXM6IDUwJTtcbn1cblxucC50aXRsZSB7XG4gICAgY29sb3I6ICNGRkZGRkY7XG4gICAgZm9udC1zaXplOiAxNnB4O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xuICAgIG1hcmdpbi1ib3R0b206IDA7XG59XG5cbi51c2VyLW5hbWUsLnVzZXItcm9sZXtcbiAgICBjb2xvcjogI0ZGRkZGRjtcbiAgICBmb250LXNpemU6IDE0cHg7XG59XG5cbi51c2VyLW5hbWUge1xuXG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG59XG5cbi8qIGhlYWRlciAqL1xuXG4vKiBzaWRlIG1lbnUgKi9cblxuLnNpZGUtd3JhcHBlciB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzAwMDAwMDtcbiAgICB3aWR0aDogMjQwcHg7XG4gICAgaGVpZ2h0OiAxMDAlO1xuICAgIHBhZGRpbmc6IDEwcHggMDtcbiAgICBtYXJnaW4tdG9wOiA3MHB4O1xuICB9XG4gIFxuICAubmF2LWxpbmsge1xuICAgIGhlaWdodDogNDBweDtcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgIHBhZGRpbmctbGVmdDozMHB4O1xuICAgIG1hcmdpbi1ib3R0b206IDE1cHg7XG4gICAgd2lkdGg6IDEwMCU7XG4gICAgZGlzcGxheTogZmxleDtcbiAgfVxuICBcbiAgLm5hdi1saW5rOmhvdmVye1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMyRjJGMkY7XG4gIH1cbiAgXG4gIC5uYXYtbGluayA+IGRpdj4gZGl2PnNwYW57XG4gICAgZm9udC1zaXplOiAxMnB4O1xuICAgIGNvbG9yOiAjRkZGRkZGO1xuICAgIHBhZGRpbmctbGVmdDogMTVweDtcbiAgfVxuICBcbiAgLmljb24td3JhcHBlcntcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cbiAgXG4gIC5uYXYtbGlua3tcbiAgICBjb2xvcjogI0ZGRkZGRjtcbiAgfVxuICBcbiAgLm5hdi1saW5rICwqe1xuICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICB9XG4gIC5uYXYtbGluayA+ZGl2e1xuICAgICAgd2lkdGg6IGluaGVyaXQ7XG4gIH1cbiAgYS5uYXYtbGluay5hY3RpdmUge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNERDRCNEE7XG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICB9XG5cblxuIFxuXG5cbiAgLyogZXhwYW5kICovXG4gIGEuZXhwYW5kLWxpbmsge1xuICAgIGNvbG9yOiAjRkZGRkZGO1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMyRjJGMkY7XG4gICAgZGlzcGxheTogZmxleDtcbiAgICBmb250LXNpemU6IDEycHg7XG4gICAgZm9udC13ZWlnaHQ6IDUwMDtcbiAgICBoZWlnaHQ6IDM1cHg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBtYXJnaW4tYm90dG9tOiA1cHg7XG4gICAgcGFkZGluZy1sZWZ0OiA2MHB4O1xuICB9XG5cbiAgLmV4cGFuZC1saW5rID4gLmljb24td3JhcHBlcntcbiAgICBvcGFjaXR5OiAwLjg7XG4gICAgcGFkZGluZy1yaWdodDogMTVweDtcbiAgfVxuICBcbiAgYS5leHBhbmQtbGluay5hY3RpdmUtZXhwYW5kIHtcbiAgICBjb2xvcjogI0RENEI0QSAhaW1wb3J0YW50O1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG4iXX0= */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_5__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgForOf"], _app_modules_spinner_loader_spinner_loader_component__WEBPACK_IMPORTED_MODULE_6__["SpinnerLoaderComponent"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterOutlet"], _angular_common__WEBPACK_IMPORTED_MODULE_5__["NgClass"]], styles: [".container[_ngcontent-%COMP%]{\n  margin-top: 70px;\n  \n}\n\n.header[_ngcontent-%COMP%] {\n    height: 60px;\n    background: #000000;\n    padding: 35px 30px;\n    position: fixed;\n    width: 100%;\n}\n.img-wrapper[_ngcontent-%COMP%] {\n  padding: 5px;\n  width: 50px;\n  height: 50px;\n  margin-right: 15px;\n  background: #4A4A4A;\n  border-radius: 50%;\n}\n.img-wrapper[_ngcontent-%COMP%]   img[_ngcontent-%COMP%]{\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    border-radius: 50%;\n}\np.title[_ngcontent-%COMP%] {\n    color: #FFFFFF;\n    font-size: 16px;\n    font-weight: bold;\n    margin-bottom: 0;\n}\n.user-name[_ngcontent-%COMP%], .user-role[_ngcontent-%COMP%]{\n    color: #FFFFFF;\n    font-size: 14px;\n}\n.user-name[_ngcontent-%COMP%] {\n\n    font-weight: bold;\n}\n\n\n.side-wrapper[_ngcontent-%COMP%] {\n    background-color: #000000;\n    width: 240px;\n    height: 100%;\n    padding: 10px 0;\n    margin-top: 70px;\n  }\n.nav-link[_ngcontent-%COMP%] {\n    height: 40px;\n    align-items: center;\n    padding-left:30px;\n    margin-bottom: 15px;\n    width: 100%;\n    display: flex;\n  }\n.nav-link[_ngcontent-%COMP%]:hover{\n    background-color: #2F2F2F;\n  }\n.nav-link[_ngcontent-%COMP%]    > div[_ngcontent-%COMP%] > div[_ngcontent-%COMP%] > span[_ngcontent-%COMP%]{\n    font-size: 12px;\n    color: #FFFFFF;\n    padding-left: 15px;\n  }\n.icon-wrapper[_ngcontent-%COMP%]{\n    display: inline-block;\n  }\n.nav-link[_ngcontent-%COMP%]{\n    color: #FFFFFF;\n  }\n.nav-link[_ngcontent-%COMP%], *[_ngcontent-%COMP%]{\n      cursor: pointer;\n  }\n.nav-link[_ngcontent-%COMP%]    > div[_ngcontent-%COMP%]{\n      width: inherit;\n  }\na.nav-link.active[_ngcontent-%COMP%] {\n    background-color: #DD4B4A;\n    margin-bottom: 5px;\n  }\n\na.expand-link[_ngcontent-%COMP%] {\n    color: #FFFFFF;\n    width: 100%;\n    background-color: #2F2F2F;\n    display: flex;\n    font-size: 12px;\n    font-weight: 500;\n    height: 35px;\n    align-items: center;\n    margin-bottom: 5px;\n    padding-left: 60px;\n  }\n.expand-link[_ngcontent-%COMP%]    > .icon-wrapper[_ngcontent-%COMP%]{\n    opacity: 0.8;\n    padding-right: 15px;\n  }\na.expand-link.active-expand[_ngcontent-%COMP%] {\n    color: #DD4B4A !important;\n    font-weight: bold;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9zaWRlLW1lbnUvc2lkZS1tZW51LmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxnQkFBZ0I7RUFDaEIsZ0JBQWdCO0FBQ2xCO0FBQ0EsV0FBVztBQUNYO0lBQ0ksWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsZUFBZTtJQUNmLFdBQVc7QUFDZjtBQUVBO0VBQ0UsWUFBWTtFQUNaLFdBQVc7RUFDWCxZQUFZO0VBQ1osa0JBQWtCO0VBQ2xCLG1CQUFtQjtFQUNuQixrQkFBa0I7QUFDcEI7QUFFQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0lBQ1osaUJBQWlCO0lBQ2pCLGtCQUFrQjtBQUN0QjtBQUVBO0lBQ0ksY0FBYztJQUNkLGVBQWU7SUFDZixpQkFBaUI7SUFDakIsZ0JBQWdCO0FBQ3BCO0FBRUE7SUFDSSxjQUFjO0lBQ2QsZUFBZTtBQUNuQjtBQUVBOztJQUVJLGlCQUFpQjtBQUNyQjtBQUVBLFdBQVc7QUFFWCxjQUFjO0FBRWQ7SUFDSSx5QkFBeUI7SUFDekIsWUFBWTtJQUNaLFlBQVk7SUFDWixlQUFlO0lBQ2YsZ0JBQWdCO0VBQ2xCO0FBRUE7SUFDRSxZQUFZO0lBQ1osbUJBQW1CO0lBQ25CLGlCQUFpQjtJQUNqQixtQkFBbUI7SUFDbkIsV0FBVztJQUNYLGFBQWE7RUFDZjtBQUVBO0lBQ0UseUJBQXlCO0VBQzNCO0FBRUE7SUFDRSxlQUFlO0lBQ2YsY0FBYztJQUNkLGtCQUFrQjtFQUNwQjtBQUVBO0lBQ0UscUJBQXFCO0VBQ3ZCO0FBRUE7SUFDRSxjQUFjO0VBQ2hCO0FBRUE7TUFDSSxlQUFlO0VBQ25CO0FBQ0E7TUFDSSxjQUFjO0VBQ2xCO0FBQ0E7SUFDRSx5QkFBeUI7SUFDekIsa0JBQWtCO0VBQ3BCO0FBTUEsV0FBVztBQUNYO0lBQ0UsY0FBYztJQUNkLFdBQVc7SUFDWCx5QkFBeUI7SUFDekIsYUFBYTtJQUNiLGVBQWU7SUFDZixnQkFBZ0I7SUFDaEIsWUFBWTtJQUNaLG1CQUFtQjtJQUNuQixrQkFBa0I7SUFDbEIsa0JBQWtCO0VBQ3BCO0FBRUE7SUFDRSxZQUFZO0lBQ1osbUJBQW1CO0VBQ3JCO0FBRUE7SUFDRSx5QkFBeUI7SUFDekIsaUJBQWlCO0FBQ3JCIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9zaWRlLW1lbnUvc2lkZS1tZW51LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuY29udGFpbmVye1xuICBtYXJnaW4tdG9wOiA3MHB4O1xuICAvKiBwYWRkaW5nOiAwOyAqL1xufVxuLyogaGVhZGVyICovXG4uaGVhZGVyIHtcbiAgICBoZWlnaHQ6IDYwcHg7XG4gICAgYmFja2dyb3VuZDogIzAwMDAwMDtcbiAgICBwYWRkaW5nOiAzNXB4IDMwcHg7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIHdpZHRoOiAxMDAlO1xufVxuXG4uaW1nLXdyYXBwZXIge1xuICBwYWRkaW5nOiA1cHg7XG4gIHdpZHRoOiA1MHB4O1xuICBoZWlnaHQ6IDUwcHg7XG4gIG1hcmdpbi1yaWdodDogMTVweDtcbiAgYmFja2dyb3VuZDogIzRBNEE0QTtcbiAgYm9yZGVyLXJhZGl1czogNTAlO1xufVxuXG4uaW1nLXdyYXBwZXIgaW1ne1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBvYmplY3QtZml0OiBjb3ZlcjtcbiAgICBib3JkZXItcmFkaXVzOiA1MCU7XG59XG5cbnAudGl0bGUge1xuICAgIGNvbG9yOiAjRkZGRkZGO1xuICAgIGZvbnQtc2l6ZTogMTZweDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbiAgICBtYXJnaW4tYm90dG9tOiAwO1xufVxuXG4udXNlci1uYW1lLC51c2VyLXJvbGV7XG4gICAgY29sb3I6ICNGRkZGRkY7XG4gICAgZm9udC1zaXplOiAxNHB4O1xufVxuXG4udXNlci1uYW1lIHtcblxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG4vKiBoZWFkZXIgKi9cblxuLyogc2lkZSBtZW51ICovXG5cbi5zaWRlLXdyYXBwZXIge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICMwMDAwMDA7XG4gICAgd2lkdGg6IDI0MHB4O1xuICAgIGhlaWdodDogMTAwJTtcbiAgICBwYWRkaW5nOiAxMHB4IDA7XG4gICAgbWFyZ2luLXRvcDogNzBweDtcbiAgfVxuICBcbiAgLm5hdi1saW5rIHtcbiAgICBoZWlnaHQ6IDQwcHg7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbiAgICBwYWRkaW5nLWxlZnQ6MzBweDtcbiAgICBtYXJnaW4tYm90dG9tOiAxNXB4O1xuICAgIHdpZHRoOiAxMDAlO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gIH1cbiAgXG4gIC5uYXYtbGluazpob3ZlcntcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMkYyRjJGO1xuICB9XG4gIFxuICAubmF2LWxpbmsgPiBkaXY+IGRpdj5zcGFue1xuICAgIGZvbnQtc2l6ZTogMTJweDtcbiAgICBjb2xvcjogI0ZGRkZGRjtcbiAgICBwYWRkaW5nLWxlZnQ6IDE1cHg7XG4gIH1cbiAgXG4gIC5pY29uLXdyYXBwZXJ7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB9XG4gIFxuICAubmF2LWxpbmt7XG4gICAgY29sb3I6ICNGRkZGRkY7XG4gIH1cbiAgXG4gIC5uYXYtbGluayAsKntcbiAgICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgfVxuICAubmF2LWxpbmsgPmRpdntcbiAgICAgIHdpZHRoOiBpbmhlcml0O1xuICB9XG4gIGEubmF2LWxpbmsuYWN0aXZlIHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjREQ0QjRBO1xuICAgIG1hcmdpbi1ib3R0b206IDVweDtcbiAgfVxuXG5cbiBcblxuXG4gIC8qIGV4cGFuZCAqL1xuICBhLmV4cGFuZC1saW5rIHtcbiAgICBjb2xvcjogI0ZGRkZGRjtcbiAgICB3aWR0aDogMTAwJTtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMkYyRjJGO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZm9udC1zaXplOiAxMnB4O1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgaGVpZ2h0OiAzNXB4O1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG4gICAgbWFyZ2luLWJvdHRvbTogNXB4O1xuICAgIHBhZGRpbmctbGVmdDogNjBweDtcbiAgfVxuXG4gIC5leHBhbmQtbGluayA+IC5pY29uLXdyYXBwZXJ7XG4gICAgb3BhY2l0eTogMC44O1xuICAgIHBhZGRpbmctcmlnaHQ6IDE1cHg7XG4gIH1cbiAgXG4gIGEuZXhwYW5kLWxpbmsuYWN0aXZlLWV4cGFuZCB7XG4gICAgY29sb3I6ICNERDRCNEEgIWltcG9ydGFudDtcbiAgICBmb250LXdlaWdodDogYm9sZDtcbn1cblxuIl19 */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](SideMenuComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1093,7 +846,6 @@ class NotificationService {
             //   verticalPosition: this.verticalPosition,
             // });
             // this._loc.back();
-            console.log(message);
             if (message.status == "404")
                 this._router.navigateByUrl("404");
             else {
@@ -1189,338 +941,6 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 
 /***/ }),
 
-/***/ "ZPyn":
-/*!*************************************************!*\
-  !*** ./src/app/core/services/report.service.ts ***!
-  \*************************************************/
-/*! exports provided: ReportService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReportService", function() { return ReportService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-
-
-
-
-
-class ReportService {
-    constructor(http) {
-        this.http = http;
-        this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
-    }
-    getUsersClasses(page, limit, direction, search) {
-        let url;
-        if (search)
-            url = this.baseUrl + "/classes?search=" + search;
-        else if (direction)
-            url = this.baseUrl + "/classes?direction=" + direction + "&page=" + page + "&limit=" + limit;
-        else
-            url = this.baseUrl + "/classes?page=" + page + "&page=" + page;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    getReportStudents(searchData, page, limt, sortColumn, SortDirection, studentId) {
-        let url;
-        if (searchData)
-            url = this.baseUrl + "/reports" + "?search=" + searchData + "&studentId=" + studentId;
-        else
-            url =
-                this.baseUrl +
-                    "/reports" + "?page=" +
-                    page +
-                    "&limit=" +
-                    limt +
-                    "&sortColumn=" +
-                    sortColumn +
-                    "&sortDirection=" +
-                    SortDirection
-                    + "&studentId=" + studentId;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onCreateReport(report) {
-        let url = this.baseUrl + "/reports";
-        var formData = new FormData();
-        formData.append("note", report.note);
-        formData.append("report", report.report);
-        formData.append("studentId", report.studentId);
-        return this.http.post(url, formData);
-    }
-    onEditReport(report) {
-        let url = this.baseUrl + "/reports/" + report._id;
-        var formData = new FormData();
-        formData.append("note", report.note);
-        formData.append("report", report.report);
-        formData.append("studentId", report.studentId);
-        return this.http.put(url, formData);
-    }
-    getReportDetail(reportId) {
-        let url = this.baseUrl + "/reports/" + reportId;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-}
-ReportService.ɵfac = function ReportService_Factory(t) { return new (t || ReportService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
-ReportService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: ReportService, factory: ReportService.ɵfac, providedIn: 'root' });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ReportService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
-
-
-/***/ }),
-
-/***/ "ay4d":
-/*!***********************************************!*\
-  !*** ./src/app/core/services/home.service.ts ***!
-  \***********************************************/
-/*! exports provided: HomeService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeService", function() { return HomeService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-
-
-
-
-
-class HomeService {
-    constructor(http) {
-        this.http = http;
-        this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
-    }
-    getPaymentList(searchData, page, limt, sortColumn, SortDirection) {
-        let url;
-        if (searchData)
-            url = this.baseUrl + "/users/admins/home/payment-info" + "?search=" + searchData;
-        else
-            url =
-                this.baseUrl +
-                    "/users/admins/home/payment-info" + "?page=" +
-                    page +
-                    "&limit=" +
-                    limt +
-                    "&sortColumn=" +
-                    sortColumn +
-                    "&sortDirection=" +
-                    SortDirection;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    getAssessmentsList(searchData, page, limt, sortColumn, SortDirection) {
-        let url;
-        if (searchData)
-            url = this.baseUrl + "/users/teachers/home/assements" + "?search=" + searchData;
-        else
-            url =
-                this.baseUrl +
-                    "/users/teachers/home/assements" + "?page=" +
-                    page +
-                    "&limit=" +
-                    limt +
-                    "&sortColumn=" +
-                    sortColumn +
-                    "&sortDirection=" +
-                    SortDirection;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    getAssessmentScoreList(searchData, page, limt, sortColumn, SortDirection) {
-        let url;
-        if (searchData)
-            url = this.baseUrl + "/users/teachers/home/assement-scores" + "?search=" + searchData;
-        else
-            url =
-                this.baseUrl +
-                    "/users/teachers/home/assement-scores" + "?page=" +
-                    page +
-                    "&limit=" +
-                    limt +
-                    "&sortColumn=" +
-                    sortColumn +
-                    "&sortDirection=" +
-                    SortDirection;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    getParentHome() {
-        let url = this.baseUrl + "/users/parents/home";
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    getAssessmentDetail(id) {
-        let url = this.baseUrl + "/assements/" + id;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-    getAssessmenttype() {
-        let url = this.baseUrl + "/assement-types";
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-    getAssessmentscore(id) {
-        let url = this.baseUrl + "/assement-scores/" + id;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-    createAssessment(assessment) {
-        let url = this.baseUrl + "/assements";
-        return this.http.post(url, assessment).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    updateAssessment(assessment) {
-        let url = this.baseUrl + "/assements/" + assessment.assessmentId;
-        return this.http.put(url, assessment).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onCreateScore(assessmentScore) {
-        let url = this.baseUrl + "/assement-scores";
-        var formData = new FormData();
-        // formData.append("title", assessmentScore.title);
-        formData.append("classId", assessmentScore.classId);
-        formData.append("assement", assessmentScore.assementId);
-        formData.append("concept", assessmentScore.concept);
-        formData.append("maxScore", assessmentScore.maxScore);
-        formData.append("assementType", assessmentScore.assementType);
-        formData.append("file", assessmentScore.file);
-        return this.http.post(url, formData);
-    }
-    onUpdateScore(assessmentScore) {
-        let url = this.baseUrl + "/assement-scores/" + assessmentScore.id;
-        var formData = new FormData();
-        // formData.append("title", assessmentScore.title);
-        formData.append("classId", assessmentScore.classId);
-        formData.append("assement", assessmentScore.assementId);
-        formData.append("concept", assessmentScore.concept);
-        formData.append("maxScore", assessmentScore.maxScore);
-        formData.append("assementType", assessmentScore.assementType);
-        formData.append("file", assessmentScore.file);
-        return this.http.put(url, formData);
-    }
-}
-HomeService.ɵfac = function HomeService_Factory(t) { return new (t || HomeService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
-HomeService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: HomeService, factory: HomeService.ɵfac, providedIn: 'root' });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
-
-
-/***/ }),
-
-/***/ "cNJU":
-/*!************************************************!*\
-  !*** ./src/app/core/services/class.service.ts ***!
-  \************************************************/
-/*! exports provided: ClassService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassService", function() { return ClassService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-
-
-
-
-
-class ClassService {
-    constructor(http) {
-        this.http = http;
-        this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
-    }
-    classLists(search, direction, page) {
-        let url;
-        if (search)
-            url = this.baseUrl + "/classes?search=" + search;
-        else if (direction)
-            url = this.baseUrl + "/classes?direction=" + direction + "&page=" + page;
-        else
-            url = this.baseUrl + "/classes?page=" + page;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-    classDetail(id) {
-        let url = this.baseUrl + "/classes/" + id;
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    createHomework(classId, homework) {
-        let url = this.baseUrl + "/classes/" + classId + "/homework";
-        let data = {
-            homework: homework
-        };
-        return this.http.post(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onAttandance(obj, userId, classId) {
-        let url = this.baseUrl + "/classes/" + classId + "/" + userId + "/attendance";
-        return this.http.post(url, obj).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    createReply(classId, homeworkId, reply) {
-        let url = this.baseUrl + "/classes/" + classId + "/homework/" + homeworkId + "/reply";
-        let data = {
-            reply: reply
-        };
-        return this.http.post(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    classCreate(data) {
-        let url = this.baseUrl + "/classes";
-        return this.http.post(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    classUpdate(data) {
-        let url = this.baseUrl + "/classes/" + data._id;
-        return this.http.put(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    deleteClass(id) {
-        let url = this.baseUrl + "/classes/" + id;
-        return this.http
-            .delete(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-    getClassFeedback(id) {
-        let url = this.baseUrl + "/classes/" + id + "/feedback";
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-    createFeedback(classId, userId, feedBackId, feedBack) {
-        let url = this.baseUrl + "/classes/" + classId + "/feedback/" + feedBackId + '/chat';
-        let data = {
-            "chat": feedBack,
-            "toUserId": userId
-        };
-        return this.http.post(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    getFeedbackChat(classId, feedBack) {
-        let url = this.baseUrl + "/classes/" + classId + "/feedback/" + feedBack + "/chat";
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-    getTimeLine(classId) {
-        let url;
-        if (classId)
-            url = this.baseUrl + "/classes/timeline?classId=" + classId;
-        else
-            url = this.baseUrl + "/classes/timeline";
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onCallFaceTime(classId, userType, name) {
-        let url = this.baseUrl + "/classes/" + classId + "/meeting?room=" + classId + "&userType=" + userType + "&username=" + name;
-        window.open(url, "_blank");
-    }
-}
-ClassService.ɵfac = function ClassService_Factory(t) { return new (t || ClassService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
-ClassService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: ClassService, factory: ClassService.ɵfac, providedIn: 'root' });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](ClassService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
-
-
-/***/ }),
-
 /***/ "f4AX":
 /*!***********************************************!*\
   !*** ./src/app/core/services/user.service.ts ***!
@@ -1534,7 +954,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
 /* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+/* harmony import */ var _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @app/enum/app_enum */ "+Mrb");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
 
 
 
@@ -1548,11 +970,11 @@ class UserService {
     userLists(searchData, page, limt, sortColumn, SortDirection, role) {
         let url;
         if (searchData)
-            url = this.baseUrl + "/users" + "?role=" + role + "&search=" + searchData;
+            url = this.baseUrl + "/users" + "?userType=" + role + "&search=" + searchData;
         else
             url =
                 this.baseUrl +
-                    "/users" + "?role=" + role + "&page=" +
+                    "/users" + "?userType=" + role + "&page=" +
                     page +
                     "&limit=" +
                     limt +
@@ -1563,150 +985,56 @@ class UserService {
         return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
     }
     createUser(user) {
-        let url = this.baseUrl + "/users/";
+        let url = this.baseUrl + "/users/" + user.userType;
         var formData = new FormData();
         formData.append("username", user.username);
         formData.append("email", user.email);
-        formData.append("role", user.role);
         formData.append("gender", user.gender);
         formData.append("file", user.file);
-        formData.append("phoneNumber", user.phoneNumber);
         formData.append("dateOfBirth", user.dateOfBirth);
-        formData.append("address", user.address);
-        formData.append("position", user.position);
-        formData.append("education", user.education);
-        formData.append("emergencyContact", user.emergencyContact);
         formData.append("password", user.password);
-        formData.append("startDate", user.startDate);
-        formData.append("students", user.students);
-        formData.append("relationship", user.relationship);
+        if (user.userType == _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_3__["Role"].Trainer) {
+            formData.append("techanics", user.techanics);
+            formData.append("height", user.height);
+            formData.append("weight", user.weight);
+        }
+        else
+            formData.append("address", user.address);
         return this.http.post(url, formData);
     }
     updateUser(user) {
-        let url = this.baseUrl + "/users/" + user._id;
+        let url = this.baseUrl + "/users/" + user.userType + "/" + user._id;
         var formData = new FormData();
         formData.append("username", user.username);
         formData.append("email", user.email);
-        formData.append("role", user.role);
+        formData.append("role", user.userType);
         formData.append("gender", user.gender);
         formData.append("file", user.file);
-        formData.append("phoneNumber", user.phoneNumber);
         formData.append("dateOfBirth", user.dateOfBirth);
-        formData.append("address", user.address);
-        formData.append("position", user.position);
-        formData.append("education", user.education);
-        formData.append("emergencyContact", user.emergencyContact);
         formData.append("password", user.password);
-        formData.append("startDate", user.startDate);
-        formData.append("students", user.students);
-        formData.append("relationship", user.relationship);
+        if (user.userType == _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_3__["Role"].Trainer) {
+            formData.append("techanics", user.techanics);
+            formData.append("height", user.height);
+            formData.append("weight", user.weight);
+            formData.append("address", user.address);
+        }
+        else
+            formData.append("address", user.address);
         return this.http.put(url, formData);
     }
-    createStudent(student) {
-        let url = this.baseUrl + "/students";
-        var formData = new FormData();
-        formData.append("username", student.username);
-        formData.append("email", student.email);
-        formData.append("role", student.role);
-        formData.append("gender", student.gender);
-        formData.append("file", student.file);
-        formData.append("dateOfBirth", student.dateOfBirth);
-        formData.append("password", student.password);
-        formData.append("paymentInfo", JSON.stringify(student.paymentInfo));
-        formData.append("year", student.year);
-        formData.append("relationship", student.relationship);
-        formData.append("students", student.students);
-        return this.http.post(url, formData);
-    }
-    updateStudent(student) {
-        let url = this.baseUrl + "/students/" + student.studentId;
-        var formData = new FormData();
-        formData.append("username", student.username);
-        formData.append("email", student.email);
-        formData.append("role", student.role);
-        formData.append("gender", student.gender);
-        formData.append("file", student.file);
-        formData.append("dateOfBirth", student.dateOfBirth);
-        formData.append("password", student.password);
-        formData.append("paymentInfo", JSON.stringify(student.paymentInfo));
-        formData.append("year", student.year);
-        formData.append("relationship", student.relationship);
-        return this.http.put(url, formData);
-    }
-    getUserDetail(userId) {
-        let url = this.baseUrl + "/users/" + userId;
+    getUserDetail(userId, routeRole) {
+        let url = this.baseUrl + "/users/" + routeRole + "/" + userId;
         return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
     }
 }
-UserService.ɵfac = function UserService_Factory(t) { return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
+UserService.ɵfac = function UserService_Factory(t) { return new (t || UserService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"])); };
 UserService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UserService, factory: UserService.ɵfac, providedIn: 'root' });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UserService, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
         args: [{
                 providedIn: 'root'
             }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
-
-
-/***/ }),
-
-/***/ "k288":
-/*!***********************************************!*\
-  !*** ./src/app/core/services/year.service.ts ***!
-  \***********************************************/
-/*! exports provided: YearService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "YearService", function() { return YearService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-
-
-
-
-
-class YearService {
-    constructor(http) {
-        this.http = http;
-        this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
-    }
-    getYearList() {
-        let url = this.baseUrl + "/years";
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onCreateYear(year) {
-        let url = this.baseUrl + "/years";
-        let data = {
-            name: year
-        };
-        return this.http.post(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onEditYear(year, id) {
-        let url = this.baseUrl + "/years/" + id;
-        let data = {
-            name: year
-        };
-        return this.http.put(url, data).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-    onDeleteYear(id) {
-        let url = this.baseUrl + "/years/" + id;
-        return this.http
-            .delete(url)
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
-    }
-}
-YearService.ɵfac = function YearService_Factory(t) { return new (t || YearService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
-YearService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: YearService, factory: YearService.ɵfac, providedIn: 'root' });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](YearService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
@@ -1737,7 +1065,7 @@ class AuthGuardService {
         const currentUser = this.authenticationService.currentUserValue;
         if (currentUser) {
             // check if route is restricted by role
-            if (route.data.roles && route.data.roles.indexOf(currentUser.role) === -1) {
+            if (route.data.roles && route.data.roles.indexOf(currentUser.userType) === -1) {
                 // role not authorised so redirect to home page
                 this.router.navigate(['/']);
                 return false;
@@ -1758,47 +1086,6 @@ AuthGuardService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefine
                 providedIn: 'root'
             }]
     }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: _core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] }]; }, null); })();
-
-
-/***/ }),
-
-/***/ "lca1":
-/*!***************************************************!*\
-  !*** ./src/app/core/services/homework.service.ts ***!
-  \***************************************************/
-/*! exports provided: HomeworkService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeworkService", function() { return HomeworkService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
-
-
-
-
-
-class HomeworkService {
-    constructor(http) {
-        this.http = http;
-        this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
-    }
-    getHomework(classId) {
-        let url = this.baseUrl + "/classes/" + classId + "/homework";
-        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
-    }
-}
-HomeworkService.ɵfac = function HomeworkService_Factory(t) { return new (t || HomeworkService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
-HomeworkService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: HomeworkService, factory: HomeworkService.ɵfac, providedIn: 'root' });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeworkService, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
-        args: [{
-                providedIn: 'root'
-            }]
-    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
 
 
 /***/ }),
@@ -1906,11 +1193,9 @@ CoreModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjecto
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PagenotfoundComponent", function() { return PagenotfoundComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @app/enum/app_enum */ "+Mrb");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @core/authentication/authentication.service */ "6CRC");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "ofXK");
-
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/authentication/authentication.service */ "6CRC");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "ofXK");
 
 
 
@@ -1943,17 +1228,14 @@ class PagenotfoundComponent {
     goToHomepage() {
         let data = this._auth.currentUserValue;
         if (data) {
-            if (data.role == _app_enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["Role"].Student)
-                this._router.navigateByUrl(`${data.role.toLowerCase()}/classes/management`);
-            else
-                this._router.navigateByUrl(`${data.role.toLowerCase()}/home/${data.role.toLowerCase()}-home`);
+            this._router.navigateByUrl('/kmax/home');
         }
         else
             this._router.navigateByUrl('/login');
         localStorage.removeItem('errorMessage');
     }
 }
-PagenotfoundComponent.ɵfac = function PagenotfoundComponent_Factory(t) { return new (t || PagenotfoundComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"])); };
+PagenotfoundComponent.ɵfac = function PagenotfoundComponent_Factory(t) { return new (t || PagenotfoundComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"])); };
 PagenotfoundComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PagenotfoundComponent, selectors: [["app-pagenotfound"]], decls: 8, vars: 4, consts: [[1, "d-flex", "align-items-center", "flex-column", "main-content"], ["class", "img", 4, "ngIf"], [1, "message"], [1, "btn", 3, "click"], [1, "img"], ["src", "assets/images/pagenotfound.svg"], ["src", "assets/images/foundError.svg"], ["src", "assets/images/internalsevererror.svg"]], template: function PagenotfoundComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, PagenotfoundComponent_div_1_Template, 2, 0, "div", 1);
@@ -1971,12 +1253,12 @@ PagenotfoundComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", !ctx.errorMessage);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.errorMessage.status != 500);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.errorMessage == null ? null : ctx.errorMessage.status) != 500);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.errorMessage.status == 500);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", (ctx.errorMessage == null ? null : ctx.errorMessage.status) == 500);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", ctx.errorMessage.message, " ");
-    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_4__["NgIf"]], styles: [".main-content[_ngcontent-%COMP%]{\n    background-color: #FAFAFA;\n    height: 100%;\n}\n\nbutton.btn[_ngcontent-%COMP%] {\n    background: #000000;\n    color: #FFFFFF;\n    font-size: 18px;\n    font-weight: bold;\n    border-radius: 0;\n    padding: 10px 20px;\n}\n\n.img[_ngcontent-%COMP%] {\n    margin-top: 100px;\n}\n\np.message[_ngcontent-%COMP%] {\n    padding: 30px;\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYWdlbm90Zm91bmQvcGFnZW5vdGZvdW5kLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx5QkFBeUI7SUFDekIsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLG1CQUFtQjtJQUNuQixjQUFjO0lBQ2QsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixnQkFBZ0I7SUFDaEIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLGtCQUFrQjtBQUN0QiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGFnZW5vdGZvdW5kL3BhZ2Vub3Rmb3VuZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW4tY29udGVudHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkFGQUZBO1xuICAgIGhlaWdodDogMTAwJTtcbn1cblxuYnV0dG9uLmJ0biB7XG4gICAgYmFja2dyb3VuZDogIzAwMDAwMDtcbiAgICBjb2xvcjogI0ZGRkZGRjtcbiAgICBmb250LXNpemU6IDE4cHg7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICBwYWRkaW5nOiAxMHB4IDIwcHg7XG59XG5cbi5pbWcge1xuICAgIG1hcmdpbi10b3A6IDEwMHB4O1xufVxuXG5wLm1lc3NhZ2Uge1xuICAgIHBhZGRpbmc6IDMwcHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"] });
+    } }, directives: [_angular_common__WEBPACK_IMPORTED_MODULE_3__["NgIf"]], styles: [".main-content[_ngcontent-%COMP%]{\n    background-color: #FAFAFA;\n    height: 100%;\n}\n\nbutton.btn[_ngcontent-%COMP%] {\n    background: #000000;\n    color: #FFFFFF;\n    font-size: 18px;\n    font-weight: bold;\n    border-radius: 0;\n    padding: 10px 20px;\n}\n\n.img[_ngcontent-%COMP%] {\n    margin-top: 100px;\n}\n\np.message[_ngcontent-%COMP%] {\n    padding: 30px;\n    text-align: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9wYWdlbm90Zm91bmQvcGFnZW5vdGZvdW5kLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSx5QkFBeUI7SUFDekIsWUFBWTtBQUNoQjs7QUFFQTtJQUNJLG1CQUFtQjtJQUNuQixjQUFjO0lBQ2QsZUFBZTtJQUNmLGlCQUFpQjtJQUNqQixnQkFBZ0I7SUFDaEIsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksYUFBYTtJQUNiLGtCQUFrQjtBQUN0QiIsImZpbGUiOiJzcmMvYXBwL21vZHVsZXMvcGFnZW5vdGZvdW5kL3BhZ2Vub3Rmb3VuZC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1haW4tY29udGVudHtcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjRkFGQUZBO1xuICAgIGhlaWdodDogMTAwJTtcbn1cblxuYnV0dG9uLmJ0biB7XG4gICAgYmFja2dyb3VuZDogIzAwMDAwMDtcbiAgICBjb2xvcjogI0ZGRkZGRjtcbiAgICBmb250LXNpemU6IDE4cHg7XG4gICAgZm9udC13ZWlnaHQ6IGJvbGQ7XG4gICAgYm9yZGVyLXJhZGl1czogMDtcbiAgICBwYWRkaW5nOiAxMHB4IDIwcHg7XG59XG5cbi5pbWcge1xuICAgIG1hcmdpbi10b3A6IDEwMHB4O1xufVxuXG5wLm1lc3NhZ2Uge1xuICAgIHBhZGRpbmc6IDMwcHg7XG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xufSJdfQ== */"] });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PagenotfoundComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -1984,7 +1266,7 @@ PagenotfoundComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵde
                 templateUrl: './pagenotfound.component.html',
                 styleUrls: ['./pagenotfound.component.css']
             }]
-    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }, { type: _core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_3__["AuthenticationService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }]; }, null); })();
+    }], function () { return [{ type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }, { type: _core_authentication_authentication_service__WEBPACK_IMPORTED_MODULE_2__["AuthenticationService"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] }]; }, null); })();
 
 
 /***/ }),
@@ -2100,8 +1382,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @core/guards/auth-guard.service */ "kx0m");
 /* harmony import */ var _modules_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @modules/side-menu/side-menu.component */ "Vloa");
 /* harmony import */ var _modules_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @modules/pagenotfound/pagenotfound.component */ "qgzn");
-/* harmony import */ var _enum_app_enum__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @enum/app_enum */ "+Mrb");
-
 
 
 
@@ -2110,133 +1390,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
+    { path: '', redirectTo: '/login', pathMatch: 'full' },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() | modules-login-login-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-login-login-module")]).then(__webpack_require__.bind(null, /*! @modules/login/login.module */ "g7DB"))
+        loadChildren: () => Promise.all(/*! import() | modules-login-login-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-users-users-module"), __webpack_require__.e("modules-login-login-module")]).then(__webpack_require__.bind(null, /*! @modules/login/login.module */ "g7DB"))
             .then(m => m.LoginModule),
     },
     {
-        path: 'admin',
+        path: 'kmax',
         component: _modules_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_3__["SideMenuComponent"],
         canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]],
         children: [
             {
                 path: 'home',
-                loadChildren: () => Promise.all(/*! import() | modules-home-home-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-home-home-module")]).then(__webpack_require__.bind(null, /*! @modules/home/home.module */ "iydT"))
+                loadChildren: () => Promise.all(/*! import() | modules-home-home-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-users-users-module"), __webpack_require__.e("modules-home-home-module")]).then(__webpack_require__.bind(null, /*! @modules/home/home.module */ "iydT"))
                     .then(m => m.HomeModule),
             },
             {
                 path: 'users',
-                loadChildren: () => Promise.all(/*! import() | modules-users-users-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-users-users-module")]).then(__webpack_require__.bind(null, /*! @modules/users/users.module */ "BJHQ"))
-                    .then(m => m.UsersModule),
-                data: { roles: [_enum_app_enum__WEBPACK_IMPORTED_MODULE_5__["Role"].Admin] }
-            },
-            {
-                path: 'classes',
-                loadChildren: () => Promise.all(/*! import() | modules-class-class-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-class-class-module")]).then(__webpack_require__.bind(null, /*! @modules/class/class.module */ "NPkX"))
-                    .then(m => m.ClassModule),
-            },
-            {
-                path: 'years',
-                loadChildren: () => Promise.all(/*! import() | modules-year-year-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("modules-year-year-module")]).then(__webpack_require__.bind(null, /*! @modules/year/year.module */ "DiTO"))
-                    .then(m => m.YearModule),
-            },
-            {
-                path: 'reports',
-                loadChildren: () => Promise.all(/*! import() | modules-report-report-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-report-report-module")]).then(__webpack_require__.bind(null, /*! @modules/report/report.module */ "pCwN"))
-                    .then(m => m.ReportModule),
+                loadChildren: () => Promise.all(/*! import() | modules-users-users-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-users-users-module"), __webpack_require__.e("modules-users-users-module")]).then(__webpack_require__.bind(null, /*! @modules/users/users.module */ "BJHQ"))
+                    .then(m => m.UsersModule)
             },
         ]
     },
-    {
-        path: 'teacher',
-        component: _modules_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_3__["SideMenuComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]],
-        children: [
-            {
-                path: 'home',
-                loadChildren: () => Promise.all(/*! import() | modules-home-home-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-home-home-module")]).then(__webpack_require__.bind(null, /*! @modules/home/home.module */ "iydT"))
-                    .then(m => m.HomeModule),
-            },
-            {
-                path: 'classes',
-                loadChildren: () => Promise.all(/*! import() | modules-class-class-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-class-class-module")]).then(__webpack_require__.bind(null, /*! @modules/class/class.module */ "NPkX"))
-                    .then(m => m.ClassModule),
-            },
-            {
-                path: 'lesson-plans',
-                loadChildren: () => Promise.all(/*! import() | modules-lessonplan-lessonplan-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-lessonplan-lessonplan-module")]).then(__webpack_require__.bind(null, /*! @modules/lessonplan/lessonplan.module */ "Ahpx"))
-                    .then(m => m.LessonplanModule),
-            },
-            {
-                path: 'reports',
-                loadChildren: () => Promise.all(/*! import() | modules-report-report-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-report-report-module")]).then(__webpack_require__.bind(null, /*! @modules/report/report.module */ "pCwN"))
-                    .then(m => m.ReportModule),
-            },
-        ]
-    },
-    {
-        path: 'student affair',
-        component: _modules_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_3__["SideMenuComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]],
-        children: [
-            {
-                path: 'home',
-                loadChildren: () => Promise.all(/*! import() | modules-home-home-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-home-home-module")]).then(__webpack_require__.bind(null, /*! @modules/home/home.module */ "iydT"))
-                    .then(m => m.HomeModule),
-            },
-            {
-                path: 'users',
-                loadChildren: () => Promise.all(/*! import() | modules-users-users-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-users-users-module")]).then(__webpack_require__.bind(null, /*! @modules/users/users.module */ "BJHQ"))
-                    .then(m => m.UsersModule),
-            },
-            {
-                path: 'classes',
-                loadChildren: () => Promise.all(/*! import() | modules-class-class-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-class-class-module")]).then(__webpack_require__.bind(null, /*! @modules/class/class.module */ "NPkX"))
-                    .then(m => m.ClassModule),
-            },
-            {
-                path: 'years',
-                loadChildren: () => Promise.all(/*! import() | modules-year-year-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("modules-year-year-module")]).then(__webpack_require__.bind(null, /*! @modules/year/year.module */ "DiTO"))
-                    .then(m => m.YearModule),
-            },
-            {
-                path: 'reports',
-                loadChildren: () => Promise.all(/*! import() | modules-report-report-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-report-report-module")]).then(__webpack_require__.bind(null, /*! @modules/report/report.module */ "pCwN"))
-                    .then(m => m.ReportModule),
-            },
-        ]
-    },
-    {
-        path: 'parent',
-        component: _modules_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_3__["SideMenuComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]],
-        children: [
-            {
-                path: 'home',
-                loadChildren: () => Promise.all(/*! import() | modules-home-home-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-home-home-module")]).then(__webpack_require__.bind(null, /*! @modules/home/home.module */ "iydT"))
-                    .then(m => m.HomeModule),
-            },
-            {
-                path: 'classes',
-                loadChildren: () => Promise.all(/*! import() | modules-class-class-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-class-class-module")]).then(__webpack_require__.bind(null, /*! @modules/class/class.module */ "NPkX"))
-                    .then(m => m.ClassModule),
-            },
-        ]
-    },
-    {
-        path: 'student',
-        component: _modules_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_3__["SideMenuComponent"],
-        canActivate: [_core_guards_auth_guard_service__WEBPACK_IMPORTED_MODULE_2__["AuthGuardService"]],
-        children: [
-            {
-                path: 'classes',
-                loadChildren: () => Promise.all(/*! import() | modules-class-class-module */[__webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~211f2a17"), __webpack_require__.e("default~modules-class-class-module~modules-home-home-module~modules-lessonplan-lessonplan-module~mod~213b2985"), __webpack_require__.e("modules-class-class-module")]).then(__webpack_require__.bind(null, /*! @modules/class/class.module */ "NPkX"))
-                    .then(m => m.ClassModule),
-            },
-        ]
-    },
-    { path: '', redirectTo: '/login', pathMatch: 'full' },
     {
         path: '**', component: _modules_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_4__["PagenotfoundComponent"]
     },
@@ -2265,49 +1441,25 @@ AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineI
 /*!***********************************************!*\
   !*** ./src/app/core/services/serviceIndex.ts ***!
   \***********************************************/
-/*! exports provided: ClassService, HomeService, HomeworkService, LessonplanService, ReportService, SupportService, UserService, YearService, LoaderService, ErrorsService, NotificationService */
+/*! exports provided: SupportService, UserService, LoaderService, ErrorsService, NotificationService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _class_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./class.service */ "cNJU");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ClassService", function() { return _class_service__WEBPACK_IMPORTED_MODULE_0__["ClassService"]; });
+/* harmony import */ var _support_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./support.service */ "Pgs2");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SupportService", function() { return _support_service__WEBPACK_IMPORTED_MODULE_0__["SupportService"]; });
 
-/* harmony import */ var _home_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home.service */ "ay4d");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HomeService", function() { return _home_service__WEBPACK_IMPORTED_MODULE_1__["HomeService"]; });
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./user.service */ "f4AX");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return _user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]; });
 
-/* harmony import */ var _homework_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./homework.service */ "lca1");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HomeworkService", function() { return _homework_service__WEBPACK_IMPORTED_MODULE_2__["HomeworkService"]; });
+/* harmony import */ var _loader_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./loader.service */ "lwos");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoaderService", function() { return _loader_service__WEBPACK_IMPORTED_MODULE_2__["LoaderService"]; });
 
-/* harmony import */ var _lessonplan_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./lessonplan.service */ "CTLJ");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LessonplanService", function() { return _lessonplan_service__WEBPACK_IMPORTED_MODULE_3__["LessonplanService"]; });
+/* harmony import */ var _errors_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./errors.service */ "t8uL");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorsService", function() { return _errors_service__WEBPACK_IMPORTED_MODULE_3__["ErrorsService"]; });
 
-/* harmony import */ var _report_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./report.service */ "ZPyn");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ReportService", function() { return _report_service__WEBPACK_IMPORTED_MODULE_4__["ReportService"]; });
-
-/* harmony import */ var _support_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./support.service */ "Pgs2");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "SupportService", function() { return _support_service__WEBPACK_IMPORTED_MODULE_5__["SupportService"]; });
-
-/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./user.service */ "f4AX");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "UserService", function() { return _user_service__WEBPACK_IMPORTED_MODULE_6__["UserService"]; });
-
-/* harmony import */ var _year_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./year.service */ "k288");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "YearService", function() { return _year_service__WEBPACK_IMPORTED_MODULE_7__["YearService"]; });
-
-/* harmony import */ var _loader_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./loader.service */ "lwos");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "LoaderService", function() { return _loader_service__WEBPACK_IMPORTED_MODULE_8__["LoaderService"]; });
-
-/* harmony import */ var _errors_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./errors.service */ "t8uL");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "ErrorsService", function() { return _errors_service__WEBPACK_IMPORTED_MODULE_9__["ErrorsService"]; });
-
-/* harmony import */ var _notification_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./notification.service */ "Y4+Y");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NotificationService", function() { return _notification_service__WEBPACK_IMPORTED_MODULE_10__["NotificationService"]; });
-
-
-
-
-
-
+/* harmony import */ var _notification_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./notification.service */ "Y4+Y");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NotificationService", function() { return _notification_service__WEBPACK_IMPORTED_MODULE_4__["NotificationService"]; });
 
 
 
@@ -2368,4 +1520,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.49a91797b26da21fc015.js.map
+//# sourceMappingURL=main.84987c1ff571f081e76e.js.map
