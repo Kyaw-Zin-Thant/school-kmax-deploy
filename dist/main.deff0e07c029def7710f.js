@@ -92,9 +92,11 @@ var Label;
     Label["payAccountType"] = "Pay account type";
     Label["createDate"] = "Create date";
     Label["amount"] = "Amount";
+    Label["noOfUser"] = "No of user";
 })(Label || (Label = {}));
 var ActionLabel;
 (function (ActionLabel) {
+    ActionLabel["fee"] = "Fee";
     ActionLabel["edit"] = "Edit";
     ActionLabel["create"] = "Create";
     ActionLabel["download"] = "Download";
@@ -941,6 +943,72 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 
 /***/ }),
 
+/***/ "ay4d":
+/*!***********************************************!*\
+  !*** ./src/app/core/services/home.service.ts ***!
+  \***********************************************/
+/*! exports provided: HomeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeService", function() { return HomeService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _env_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @env/environment */ "AytR");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "tk/3");
+
+
+
+
+
+class HomeService {
+    constructor(http) {
+        this.http = http;
+        this.baseUrl = _env_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].apiUrl;
+    }
+    paymentLists(searchData, page, limt, sortColumn, SortDirection, type) {
+        let url;
+        if (searchData)
+            url = this.baseUrl + "/" + type + "?search=" + searchData;
+        else
+            url =
+                this.baseUrl +
+                    "/" + type + "?page=" +
+                    page +
+                    "&limit=" +
+                    limt +
+                    "&sortColumn=" +
+                    sortColumn +
+                    "&sortDirection=" +
+                    SortDirection;
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || []));
+    }
+    createPayment(payment, type) {
+        let url = this.baseUrl + "/" + type;
+        return this.http.post(url, payment);
+    }
+    editPayment(payment, paymentId, type) {
+        let url = this.baseUrl + "/" + type + "/" + paymentId;
+        return this.http.put(url, payment);
+    }
+    getPayemntDetail(id, type) {
+        let url = this.baseUrl + "/" + type + "/" + id;
+        return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
+    }
+}
+HomeService.ɵfac = function HomeService_Factory(t) { return new (t || HomeService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"])); };
+HomeService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: HomeService, factory: HomeService.ɵfac, providedIn: 'root' });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](HomeService, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"],
+        args: [{
+                providedIn: 'root'
+            }]
+    }], function () { return [{ type: _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "f4AX":
 /*!***********************************************!*\
   !*** ./src/app/core/services/user.service.ts ***!
@@ -1441,7 +1509,7 @@ AppRoutingModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineI
 /*!***********************************************!*\
   !*** ./src/app/core/services/serviceIndex.ts ***!
   \***********************************************/
-/*! exports provided: SupportService, UserService, LoaderService, ErrorsService, NotificationService */
+/*! exports provided: SupportService, UserService, LoaderService, ErrorsService, NotificationService, HomeService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1460,6 +1528,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony import */ var _notification_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./notification.service */ "Y4+Y");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "NotificationService", function() { return _notification_service__WEBPACK_IMPORTED_MODULE_4__["NotificationService"]; });
+
+/* harmony import */ var _home_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./home.service */ "ay4d");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "HomeService", function() { return _home_service__WEBPACK_IMPORTED_MODULE_5__["HomeService"]; });
+
 
 
 
@@ -1520,4 +1592,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.84987c1ff571f081e76e.js.map
+//# sourceMappingURL=main.deff0e07c029def7710f.js.map
