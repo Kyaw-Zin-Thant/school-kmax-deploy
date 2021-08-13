@@ -139,3 +139,9 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   background-size: 18px;
   background-position: center;
 }
+
+@media (min-width: 1500px){
+  .container {
+    max-width: 1500px;
+}
+}
