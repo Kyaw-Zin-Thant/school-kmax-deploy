@@ -110,6 +110,8 @@ var ActionLabel;
     ActionLabel["chooseFile"] = "Choose File";
     ActionLabel["paymentInfo"] = "Payment Info";
     ActionLabel["accountInfo"] = "Account Info";
+    ActionLabel["userDetail"] = "User Detail";
+    ActionLabel["booking"] = "Booking";
 })(ActionLabel || (ActionLabel = {}));
 var Relationship;
 (function (Relationship) {
@@ -1091,7 +1093,7 @@ class UserService {
         return this.http.put(url, formData);
     }
     getUserDetail(userId, routeRole) {
-        let url = this.baseUrl + "/users/" + routeRole + "/" + userId;
+        let url = this.baseUrl + "/users/" + userId;
         return this.http.get(url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])((obj) => obj || {}));
     }
 }
@@ -1592,4 +1594,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.deff0e07c029def7710f.js.map
+//# sourceMappingURL=main.1461c3f7c54b21720bc7.js.map
