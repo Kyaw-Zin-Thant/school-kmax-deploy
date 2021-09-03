@@ -313,7 +313,7 @@ const environment = {
     production: false,
     // apiUrl :'http://localhost:4000',
     // apiUrl:'https://quiet-shelf-92207.herokuapp.com/api/v1',
-    apiUrl: 'http://ec2-18-116-39-16.us-east-2.compute.amazonaws.com:5000/api/v1',
+    apiUrl: 'https://kmax.fitness/api/v1',
     enableDebug: false
 };
 /*
@@ -1594,4 +1594,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.1461c3f7c54b21720bc7.js.map
+//# sourceMappingURL=main.8a127cde52fa41462f86.js.map
