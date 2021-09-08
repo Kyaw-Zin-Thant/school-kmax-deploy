@@ -36,6 +36,7 @@ var AdminSideMenu;
     AdminSideMenu["Class"] = "Class";
     AdminSideMenu["Year"] = "Year";
     AdminSideMenu["Report"] = "Report";
+    AdminSideMenu["Promotion"] = "Promotion";
 })(AdminSideMenu || (AdminSideMenu = {}));
 var CommonExpands;
 (function (CommonExpands) {
@@ -65,6 +66,8 @@ var AdminRoute;
     AdminRoute["UserTrainer"] = "/kmax/users/lists/trainer";
     AdminRoute["UserMemeber"] = "/kmax/users/lists/member";
     AdminRoute["UserCreate"] = "/kmax/users/create";
+    AdminRoute["Promotion"] = "/kmax/promotion/lists";
+    AdminRoute["PromotionCreate"] = "/kmax/promotion/create";
 })(AdminRoute || (AdminRoute = {}));
 var IconStatus;
 (function (IconStatus) {
@@ -313,6 +316,7 @@ const environment = {
     production: false,
     // apiUrl :'http://localhost:4000',
     // apiUrl:'https://quiet-shelf-92207.herokuapp.com/api/v1',
+    // apiUrl:'http://ec2-18-116-39-16.us-east-2.compute.amazonaws.com:5000/api/v1',
     apiUrl: 'https://kmax.fitness/api/v1',
     enableDebug: false
 };
@@ -449,6 +453,8 @@ class SupportService {
                 return `${url + this.checkIconType("class", status) + ".svg"}`;
             case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Year:
                 return `${url + this.checkIconType("year", status) + ".svg"}`;
+            case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Promotion:
+                return `${url + this.checkIconType("promotion", status) + ".svg"}`;
             case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Report:
                 return `${url + this.checkIconType("report", status) + ".svg"}`;
             case _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["TeacherSideMenu"].LessonPlan:
@@ -671,7 +677,13 @@ class SideMenuComponent {
                         { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Admin, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserAdmin, expandRoute: 'admin' },
                         { id: 2, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Trainer, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserTrainer, expandRoute: 'trainer' },
                         { id: 3, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Member, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserMemeber, expandRoute: 'member' },
-                        { id: 6, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Create, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserCreate, expandRoute: 'create' }
+                        { id: 4, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Create, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].UserCreate, expandRoute: 'create' }
+                    ]
+                },
+                {
+                    id: 3, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminSideMenu"].Promotion, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].Promotion, activeRoute: 'promotion',
+                    expand: [
+                        { id: 1, name: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["UserExpands"].Create, routeName: _enum_app_enum__WEBPACK_IMPORTED_MODULE_1__["AdminRoute"].PromotionCreate, expandRoute: 'create' }
                     ]
                 },
             ]
@@ -927,7 +939,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
                     _modules_side_menu_side_menu_component__WEBPACK_IMPORTED_MODULE_2__["SideMenuComponent"],
                     _app_modules_spinner_loader_spinner_loader_component__WEBPACK_IMPORTED_MODULE_3__["SpinnerLoaderComponent"],
-                    _modules_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PagenotfoundComponent"]
+                    _modules_pagenotfound_pagenotfound_component__WEBPACK_IMPORTED_MODULE_5__["PagenotfoundComponent"],
                 ],
                 imports: [
                     _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1463,7 +1475,7 @@ const routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     {
         path: 'login',
-        loadChildren: () => Promise.all(/*! import() | modules-login-login-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-users-users-module"), __webpack_require__.e("modules-login-login-module")]).then(__webpack_require__.bind(null, /*! @modules/login/login.module */ "g7DB"))
+        loadChildren: () => Promise.all(/*! import() | modules-login-login-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-promotion-promotion-module~modul~02632bf2"), __webpack_require__.e("modules-login-login-module")]).then(__webpack_require__.bind(null, /*! @modules/login/login.module */ "g7DB"))
             .then(m => m.LoginModule),
     },
     {
@@ -1473,13 +1485,18 @@ const routes = [
         children: [
             {
                 path: 'home',
-                loadChildren: () => Promise.all(/*! import() | modules-home-home-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-users-users-module"), __webpack_require__.e("modules-home-home-module")]).then(__webpack_require__.bind(null, /*! @modules/home/home.module */ "iydT"))
+                loadChildren: () => Promise.all(/*! import() | modules-home-home-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-promotion-promotion-module~modul~02632bf2"), __webpack_require__.e("modules-home-home-module")]).then(__webpack_require__.bind(null, /*! @modules/home/home.module */ "iydT"))
                     .then(m => m.HomeModule),
             },
             {
                 path: 'users',
-                loadChildren: () => Promise.all(/*! import() | modules-users-users-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-users-users-module"), __webpack_require__.e("modules-users-users-module")]).then(__webpack_require__.bind(null, /*! @modules/users/users.module */ "BJHQ"))
+                loadChildren: () => Promise.all(/*! import() | modules-users-users-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-promotion-promotion-module~modul~02632bf2"), __webpack_require__.e("modules-users-users-module")]).then(__webpack_require__.bind(null, /*! @modules/users/users.module */ "BJHQ"))
                     .then(m => m.UsersModule)
+            },
+            {
+                path: 'promotion',
+                loadChildren: () => Promise.all(/*! import() | modules-promotion-promotion-module */[__webpack_require__.e("default~modules-home-home-module~modules-login-login-module~modules-promotion-promotion-module~modul~02632bf2"), __webpack_require__.e("modules-promotion-promotion-module")]).then(__webpack_require__.bind(null, /*! @modules/promotion/promotion.module */ "EGnv"))
+                    .then(m => m.PromotionModule)
             },
         ]
     },
@@ -1594,4 +1611,4 @@ webpackEmptyAsyncContext.id = "zn8P";
 /***/ })
 
 },[[0,"runtime","vendor"]]]);
-//# sourceMappingURL=main.8a127cde52fa41462f86.js.map
+//# sourceMappingURL=main.30258139031babf0047b.js.map
