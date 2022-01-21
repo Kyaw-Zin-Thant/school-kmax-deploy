@@ -425,7 +425,7 @@ const environment = {
     // apiUrl :'http://localhost:4000',
     // apiUrl:'https://quiet-shelf-92207.herokuapp.com/api/v1',
     // apiUrl:'http://ec2-52-221-194-25.ap-southeast-1.compute.amazonaws.com:5000/api/v1',
-    apiUrl: 'http://54.254.248.42:7001/api/v1',
+    apiUrl: 'http://54.254.248.42:5000/api/v1',
     enableDebug: false
 };
 /*
